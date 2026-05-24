@@ -392,55 +392,165 @@ export default function Home() {
         </div>
 
       </section>
-
       {/* Certificates */}
-      <section
-        id="certificates"
-        className="max-w-6xl mx-auto px-6 py-32"
-      >
+<section
+  id="certificates"
+  className="max-w-6xl mx-auto px-6 py-32"
+>
 
-        <div className="text-center mb-20">
+  <div className="text-center mb-20">
 
-          <p className="text-cyan-400 tracking-[0.2em] mb-4">
-            CERTIFICATES
-          </p>
+    <p className="text-cyan-400 tracking-[0.2em] mb-4">
+      CERTIFICATES
+    </p>
 
-          <h2 className="text-5xl font-bold">
-            Certifications & Achievements
-          </h2>
+    <h2 className="text-5xl font-bold">
+      Certifications & Achievements
+    </h2>
 
-        </div>
+    <p className="text-gray-400 mt-6 text-lg">
+      Professional certifications and technical learning achievements.
+    </p>
 
-        <div className="space-y-8">
+  </div>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+  <div className="grid md:grid-cols-2 gap-8">
 
-            <h3 className="text-2xl font-semibold">
-              Frontend Developer Bootcamp
-            </h3>
+    {/* Certificate 1 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
 
-            <p className="text-gray-400 mt-3">
-              Completed intensive frontend development bootcamp at PESU I/O.
-            </p>
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        IBM
+      </p>
 
-          </div>
+      <h3 className="text-2xl font-bold">
+        Machine Learning with Python
+      </h3>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+      <p className="text-gray-400 mt-4 leading-8">
+        Learned machine learning fundamentals, model building,
+        and AI workflows using Python.
+      </p>
 
-            <h3 className="text-2xl font-semibold">
-              AI & Machine Learning Certification
-            </h3>
+      <p className="text-gray-500 mt-6">
+        Issued Dec 2025
+      </p>
 
-            <p className="text-gray-400 mt-3">
-              Learned machine learning concepts and AI workflows.
-            </p>
+    </div>
 
-          </div>
+    {/* Certificate 2 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
 
-        </div>
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        IBM
+      </p>
 
-      </section>
+      <h3 className="text-2xl font-bold">
+        Getting Started with Artificial Intelligence
+      </h3>
 
+      <p className="text-gray-400 mt-4 leading-8">
+        Introduction to AI concepts, intelligent systems,
+        and practical AI applications.
+      </p>
+
+      <p className="text-gray-500 mt-6">
+        Issued Nov 2025
+      </p>
+
+    </div>
+
+    {/* Certificate 3 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
+
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        Google
+      </p>
+
+      <h3 className="text-2xl font-bold">
+        Introduction to Generative AI
+      </h3>
+
+      <p className="text-gray-400 mt-4 leading-8">
+        Learned fundamentals of generative AI,
+        large language models, and AI-powered workflows.
+      </p>
+
+      <p className="text-gray-500 mt-6">
+        Issued Nov 2024
+      </p>
+
+    </div>
+
+    {/* Certificate 4 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
+
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        LaunchED Global
+      </p>
+
+      <h3 className="text-2xl font-bold">
+        Web Development
+      </h3>
+
+      <p className="text-gray-400 mt-4 leading-8">
+        Built responsive websites and learned modern
+        frontend development practices.
+      </p>
+
+      <p className="text-gray-500 mt-6">
+        Issued Oct 2025
+      </p>
+
+    </div>
+
+    {/* Certificate 5 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
+
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        PESU I/O
+      </p>
+
+      <h3 className="text-2xl font-bold">
+        Frontend Developer Bootcamp
+      </h3>
+
+      <p className="text-gray-400 mt-4 leading-8">
+        Intensive frontend bootcamp focused on React,
+        UI/UX, and modern web technologies.
+      </p>
+
+      <p className="text-gray-500 mt-6">
+        Issued Nov 2024
+      </p>
+
+    </div>
+
+    {/* Certificate 6 */}
+    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
+
+      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
+        HackerRank
+      </p>
+
+      <h3 className="text-2xl font-bold">
+        Python (Basic)
+      </h3>
+
+      <p className="text-gray-400 mt-4 leading-8">
+        Demonstrated foundational Python programming
+        and problem-solving skills.
+      </p>
+
+      <p className="text-gray-500 mt-6">
+        Issued Sep 2024
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
       {/* Events */}
       <section
         id="events"
