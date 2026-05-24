@@ -7,6 +7,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+
         <div className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
 
           <h1 className="text-3xl font-bold">
@@ -34,6 +35,7 @@ export default function Home() {
           </div>
 
         </div>
+
       </nav>
 
       {/* Hero Section */}
@@ -41,7 +43,7 @@ export default function Home() {
 
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-20 items-center">
 
-          {/* Left */}
+          {/* Left Side */}
           <div>
 
             <p className="text-cyan-400 tracking-[0.3em] mb-6 text-sm">
@@ -63,15 +65,23 @@ export default function Home() {
               and building futuristic digital experiences.
             </p>
 
+            {/* Buttons */}
             <div className="mt-10 flex flex-wrap gap-6">
 
-              <button className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 hover:shadow-[0_0_40px_#22d3ee] transition duration-300">
+              <a
+                href="#projects"
+                className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 hover:shadow-[0_0_40px_#22d3ee] transition duration-300"
+              >
                 View Projects
-              </button>
+              </a>
 
-              <button className="border border-white/20 px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition duration-300">
+              <a
+                href="/resume.pdf"
+                download
+                className="border border-white/20 px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition duration-300"
+              >
                 Download Resume
-              </button>
+              </a>
 
             </div>
 
@@ -105,13 +115,15 @@ export default function Home() {
 
           </div>
 
-          {/* Right */}
+          {/* Right Side */}
           <div className="flex justify-center">
 
             <div className="relative">
 
+              {/* Glow */}
               <div className="absolute inset-0 bg-cyan-400/20 blur-[100px] rounded-full"></div>
 
+              {/* Profile Image */}
               <img
                 src="/akshay.jpeg"
                 alt="Akshay"
