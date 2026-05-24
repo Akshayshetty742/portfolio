@@ -28,6 +28,14 @@ export default function Home() {
               Projects
             </a>
 
+            <a href="#certificates" className="hover:text-cyan-400 transition">
+              Certificates
+            </a>
+
+            <a href="#events" className="hover:text-cyan-400 transition">
+              Events
+            </a>
+
             <a href="#contact" className="hover:text-cyan-400 transition">
               Contact
             </a>
@@ -43,7 +51,7 @@ export default function Home() {
 
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-20 items-center">
 
-          {/* Left Side */}
+          {/* Left */}
           <div>
 
             <p className="text-cyan-400 tracking-[0.3em] mb-6 text-sm">
@@ -65,7 +73,6 @@ export default function Home() {
               and building futuristic digital experiences.
             </p>
 
-            {/* Buttons */}
             <div className="mt-10 flex flex-wrap gap-6">
 
               <a
@@ -85,7 +92,6 @@ export default function Home() {
 
             </div>
 
-            {/* Social Links */}
             <div className="mt-12 flex gap-8 text-gray-400">
 
               <a
@@ -115,15 +121,13 @@ export default function Home() {
 
           </div>
 
-          {/* Right Side */}
+          {/* Right */}
           <div className="flex justify-center">
 
             <div className="relative">
 
-              {/* Glow */}
               <div className="absolute inset-0 bg-cyan-400/20 blur-[100px] rounded-full"></div>
 
-              {/* Profile Image */}
               <img
                 src="/akshay.jpeg"
                 alt="Akshay"
@@ -138,13 +142,13 @@ export default function Home() {
 
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section
         id="about"
-        className="relative z-10 max-w-6xl mx-auto px-6 py-32"
+        className="max-w-6xl mx-auto px-6 py-32"
       >
 
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-20">
 
           <div>
 
@@ -161,16 +165,14 @@ export default function Home() {
           <div>
 
             <p className="text-gray-400 text-lg leading-9">
-              I am currently pursuing Computer Science Engineering in
-              Artificial Intelligence & Machine Learning at PES University.
-              I enjoy creating modern frontend applications, experimenting
-              with AI tools, participating in hackathons, and building
-              real-world impactful projects.
+              I enjoy building modern web applications, experimenting
+              with AI tools, participating in hackathons, and creating
+              impactful user experiences.
             </p>
 
             <p className="text-gray-400 text-lg leading-9 mt-6">
-              My focus is on combining beautiful UI/UX with intelligent
-              systems to create futuristic digital experiences.
+              My focus is combining modern frontend development with
+              AI-powered solutions to create futuristic digital products.
             </p>
 
           </div>
@@ -182,7 +184,7 @@ export default function Home() {
       {/* Skills */}
       <section
         id="skills"
-        className="relative z-10 max-w-6xl mx-auto px-6 py-32"
+        className="max-w-6xl mx-auto px-6 py-32"
       >
 
         <div className="text-center mb-20">
@@ -199,8 +201,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
             <h3 className="text-2xl font-semibold mb-6">
               Frontend
             </h3>
@@ -210,13 +211,10 @@ export default function Home() {
               <p>Next.js</p>
               <p>Tailwind CSS</p>
               <p>JavaScript</p>
-              <p>HTML & CSS</p>
             </div>
-
           </div>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
             <h3 className="text-2xl font-semibold mb-6">
               AI & Tools
             </h3>
@@ -224,27 +222,22 @@ export default function Home() {
             <div className="space-y-3 text-gray-400">
               <p>Python</p>
               <p>Machine Learning</p>
-              <p>Prompt Engineering</p>
               <p>OpenAI APIs</p>
               <p>Firebase</p>
             </div>
-
           </div>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
             <h3 className="text-2xl font-semibold mb-6">
               Other Skills
             </h3>
 
             <div className="space-y-3 text-gray-400">
               <p>Git & GitHub</p>
-              <p>Vercel</p>
-              <p>Figma</p>
               <p>Responsive Design</p>
               <p>UI/UX Design</p>
+              <p>Vercel</p>
             </div>
-
           </div>
 
         </div>
@@ -254,7 +247,7 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="relative z-10 max-w-6xl mx-auto px-6 py-32"
+        className="max-w-6xl mx-auto px-6 py-32"
       >
 
         <div className="text-center mb-20">
@@ -264,48 +257,220 @@ export default function Home() {
           </p>
 
           <h2 className="text-5xl font-bold">
-            Featured Work
+            Featured Projects
           </h2>
 
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
 
+          {/* Nexus AI */}
           <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
 
-            <div className="h-60 bg-gradient-to-br from-cyan-500/20 to-blue-500/10"></div>
+            <div className="h-60 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 flex items-center justify-center">
+
+              <h3 className="text-4xl font-bold text-cyan-400">
+                Nexus AI
+              </h3>
+
+            </div>
 
             <div className="p-8">
 
-              <h3 className="text-3xl font-bold">
-                AI SaaS Platform
-              </h3>
+              <div className="flex items-center justify-between flex-wrap gap-4">
 
-              <p className="text-gray-400 mt-4 leading-8">
-                A modern AI-powered SaaS application with authentication,
-                dashboards, and AI integrations.
+                <h3 className="text-3xl font-bold">
+                  Nexus AI – Student Life OS
+                </h3>
+
+                <span className="text-sm text-gray-400">
+                  Feb 2026 - Mar 2026
+                </span>
+
+              </div>
+
+              <p className="text-cyan-400 mt-3">
+                Team Project
               </p>
+
+              <p className="text-gray-400 mt-6 leading-8">
+                Built backend APIs using Node.js and Express for task scheduling
+                and automation. Integrated Gemini AI to generate personalized
+                study plans from syllabus input.
+              </p>
+
+              <ul className="mt-6 text-gray-400 space-y-3 leading-8">
+
+                <li>
+                  • Developed smart calendar, auto-rescheduler, and habit tracking
+                </li>
+
+                <li>
+                  • Collaborated using Git and structured branching workflows
+                </li>
+
+                <li>
+                  • Built centralized student productivity platform with AI integration
+                </li>
+
+              </ul>
+
+              <a
+                href="https://github.com/Akshayshetty742/nexus-ai-os"
+                target="_blank"
+                className="inline-block mt-8 text-cyan-400 hover:text-cyan-300 transition"
+              >
+                View Project →
+              </a>
 
             </div>
 
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
+          {/* JourneyHub */}
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-pink-400 hover:-translate-y-3 transition duration-300">
 
-            <div className="h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/10"></div>
+            <div className="h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/10 flex items-center justify-center">
+
+              <h3 className="text-4xl font-bold text-pink-400">
+                JourneyHub
+              </h3>
+
+            </div>
 
             <div className="p-8">
 
-              <h3 className="text-3xl font-bold">
-                Portfolio Website
-              </h3>
+              <div className="flex items-center justify-between flex-wrap gap-4">
 
-              <p className="text-gray-400 mt-4 leading-8">
-                A premium developer portfolio built with Next.js
-                and Tailwind CSS.
+                <h3 className="text-3xl font-bold">
+                  JourneyHub – Travel Booking Web App
+                </h3>
+
+                <span className="text-sm text-gray-400">
+                  May 2025 - Aug 2025
+                </span>
+
+              </div>
+
+              <p className="text-pink-400 mt-3">
+                Personal Project
               </p>
 
+              <p className="text-gray-400 mt-6 leading-8">
+                Developed responsive travel website using HTML, CSS, and JavaScript
+                with smooth UI and mobile responsiveness.
+              </p>
+
+              <ul className="mt-6 text-gray-400 space-y-3 leading-8">
+
+                <li>
+                  • Designed interactive travel packages and pricing UI
+                </li>
+
+                <li>
+                  • Integrated booking and payment processing workflows
+                </li>
+
+                <li>
+                  • Deployed using Netlify and managed code using GitHub
+                </li>
+
+              </ul>
+
+              <a
+                href="https://journeyhub-akshaya.netlify.app/"
+                target="_blank"
+                className="inline-block mt-8 text-pink-400 hover:text-pink-300 transition"
+              >
+                View Project →
+              </a>
+
             </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Certificates */}
+      <section
+        id="certificates"
+        className="max-w-6xl mx-auto px-6 py-32"
+      >
+
+        <div className="text-center mb-20">
+
+          <p className="text-cyan-400 tracking-[0.2em] mb-4">
+            CERTIFICATES
+          </p>
+
+          <h2 className="text-5xl font-bold">
+            Certifications & Achievements
+          </h2>
+
+        </div>
+
+        <div className="space-y-8">
+
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+
+            <h3 className="text-2xl font-semibold">
+              Frontend Developer Bootcamp
+            </h3>
+
+            <p className="text-gray-400 mt-3">
+              Completed intensive frontend development bootcamp at PESU I/O.
+            </p>
+
+          </div>
+
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+
+            <h3 className="text-2xl font-semibold">
+              AI & Machine Learning Certification
+            </h3>
+
+            <p className="text-gray-400 mt-3">
+              Learned machine learning concepts and AI workflows.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Events */}
+      <section
+        id="events"
+        className="max-w-6xl mx-auto px-6 py-32"
+      >
+
+        <div className="text-center mb-20">
+
+          <p className="text-cyan-400 tracking-[0.2em] mb-4">
+            EVENTS
+          </p>
+
+          <h2 className="text-5xl font-bold">
+            Hackathons & Events
+          </h2>
+
+        </div>
+
+        <div className="space-y-8">
+
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+
+            <h3 className="text-2xl font-semibold">
+              Hackathon Participant
+            </h3>
+
+            <p className="text-gray-400 mt-3">
+              Participated in AI and web development hackathons focused
+              on building innovative digital solutions.
+            </p>
 
           </div>
 
@@ -316,7 +481,7 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="relative z-10 max-w-4xl mx-auto px-6 py-32 text-center"
+        className="max-w-4xl mx-auto px-6 py-32 text-center"
       >
 
         <p className="text-cyan-400 tracking-[0.2em] mb-4">
@@ -329,14 +494,14 @@ export default function Home() {
 
         <p className="text-gray-400 text-lg leading-9">
           Interested in collaborations, internships, or exciting projects?
-          Let’s connect and create impactful experiences together.
+          Let’s connect together.
         </p>
 
         <div className="mt-12 flex justify-center gap-6 flex-wrap">
 
           <a
             href="mailto:shettyakshay742@gmail.com"
-            className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition"
+            className="bg-cyan-400 text-black px-8 py-4 rounded-2xl font-semibold"
           >
             Email Me
           </a>
@@ -344,7 +509,7 @@ export default function Home() {
           <a
             href="https://github.com/Akshayshetty742"
             target="_blank"
-            className="border border-white/20 px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition"
+            className="border border-white/20 px-8 py-4 rounded-2xl"
           >
             GitHub
           </a>
