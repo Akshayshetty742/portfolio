@@ -1,37 +1,40 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden relative">
+    <main className="min-h-screen bg-black text-white overflow-hidden relative scroll-smooth">
 
       {/* Background Glow */}
       <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/20 blur-[150px] rounded-full"></div>
 
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 relative z-10">
-        <h1 className="text-3xl font-bold tracking-wide">
-          Akshay
-        </h1>
+      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+        <div className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+          
+          <h1 className="text-3xl font-bold tracking-wide">
+            Akshay
+          </h1>
 
-        <div className="hidden md:flex gap-10 text-sm text-gray-300">
-          <a href="#about" className="hover:text-cyan-400 transition">
-            About
-          </a>
+          <div className="hidden md:flex gap-10 text-sm text-gray-300">
+            <a href="#about" className="hover:text-cyan-400 transition">
+              About
+            </a>
 
-          <a href="#skills" className="hover:text-cyan-400 transition">
-            Skills
-          </a>
+            <a href="#skills" className="hover:text-cyan-400 transition">
+              Skills
+            </a>
 
-          <a href="#projects" className="hover:text-cyan-400 transition">
-            Projects
-          </a>
+            <a href="#projects" className="hover:text-cyan-400 transition">
+              Projects
+            </a>
 
-          <a href="#contact" className="hover:text-cyan-400 transition">
-            Contact
-          </a>
+            <a href="#contact" className="hover:text-cyan-400 transition">
+              Contact
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-32">
+      <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-36">
 
         <p className="text-cyan-400 tracking-[0.3em] mb-6 text-sm">
           AI • FRONTEND • CREATOR
@@ -62,7 +65,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Stats */}
+      <section className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
+            <h2 className="text-4xl font-bold text-cyan-400">10+</h2>
+            <p className="text-gray-400 mt-2">Projects</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
+            <h2 className="text-4xl font-bold text-cyan-400">5+</h2>
+            <p className="text-gray-400 mt-2">Hackathons</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
+            <h2 className="text-4xl font-bold text-cyan-400">2+</h2>
+            <p className="text-gray-400 mt-2">Internships</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
+            <h2 className="text-4xl font-bold text-cyan-400">100%</h2>
+            <p className="text-gray-400 mt-2">Passion</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* About */}
       <section
         id="about"
         className="relative z-10 max-w-6xl mx-auto px-6 py-32"
@@ -96,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills */}
       <section
         id="skills"
         className="relative z-10 max-w-6xl mx-auto px-6 py-32"
@@ -113,7 +143,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
             <h3 className="text-2xl font-semibold mb-6">
               Frontend
             </h3>
@@ -127,7 +157,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
             <h3 className="text-2xl font-semibold mb-6">
               AI & Tools
             </h3>
@@ -141,7 +171,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
             <h3 className="text-2xl font-semibold mb-6">
               Other Skills
             </h3>
@@ -158,7 +188,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects */}
       <section
         id="projects"
         className="relative z-10 max-w-6xl mx-auto px-6 py-32"
@@ -175,7 +205,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-10">
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
             <div className="h-60 bg-gradient-to-br from-cyan-500/20 to-blue-500/10"></div>
 
             <div className="p-8">
@@ -194,7 +224,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
             <div className="h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/10"></div>
 
             <div className="p-8">
@@ -216,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section
         id="contact"
         className="relative z-10 max-w-4xl mx-auto px-6 py-32 text-center"
@@ -259,6 +289,11 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8 text-center text-gray-500">
+        © 2026 Akshay. Built with Next.js & Tailwind CSS.
+      </footer>
 
     </main>
   );
