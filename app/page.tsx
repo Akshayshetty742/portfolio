@@ -120,7 +120,7 @@ export default function Home() {
 
           </div>
 
-          {/* Image */}
+          {/* Hero Image */}
           <div className="flex justify-center">
 
             <div className="relative">
@@ -263,8 +263,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-10">
 
-          {/* Nexus AI */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition">
 
             <img
               src="/nexus.png"
@@ -284,14 +283,13 @@ export default function Home() {
 
               <p className="text-gray-400 mt-6 leading-8">
                 Built backend APIs using Node.js and Express for task scheduling
-                and automation. Integrated Gemini AI to generate personalized
-                study plans from syllabus input.
+                and automation with Gemini AI integrations.
               </p>
 
               <a
                 href="https://github.com/Akshayshetty742/nexus-ai-os"
                 target="_blank"
-                className="inline-block mt-8 text-cyan-400 hover:text-cyan-300 transition"
+                className="inline-block mt-8 text-cyan-400"
               >
                 View Project →
               </a>
@@ -300,8 +298,7 @@ export default function Home() {
 
           </div>
 
-          {/* JourneyHub */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-pink-400 hover:-translate-y-3 transition duration-300">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-pink-400 transition">
 
             <img
               src="/journeyhub.png"
@@ -320,14 +317,14 @@ export default function Home() {
               </p>
 
               <p className="text-gray-400 mt-6 leading-8">
-                Developed responsive travel website using HTML, CSS, and JavaScript
-                with smooth UI and mobile responsiveness.
+                Responsive travel booking platform using HTML, CSS,
+                JavaScript and modern UI workflows.
               </p>
 
               <a
                 href="https://journeyhub-akshaya.netlify.app/"
                 target="_blank"
-                className="inline-block mt-8 text-pink-400 hover:text-pink-300 transition"
+                className="inline-block mt-8 text-pink-400"
               >
                 View Project →
               </a>
@@ -370,7 +367,7 @@ export default function Home() {
           ].map((cert, index) => (
             <div
               key={index}
-              className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 transition"
+              className="bg-white/5 border border-white/10 p-8 rounded-3xl"
             >
               <h3 className="text-2xl font-bold">
                 {cert}
@@ -407,7 +404,7 @@ export default function Home() {
         <div className="space-y-16">
 
           {/* Event 1 */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
 
             <img
               src="/dreamflow-event.png"
@@ -417,18 +414,13 @@ export default function Home() {
 
             <div className="p-10">
 
-              <p className="text-cyan-400 tracking-[0.2em] text-sm mb-3">
-                BUILDATHON 2025
-              </p>
-
               <h3 className="text-4xl font-bold">
                 Dreamflow Buildathon
               </h3>
 
               <p className="text-gray-400 mt-8 text-lg leading-9">
                 Successfully completed and shipped a functional application during
-                Dreamflow Buildathon 2025. Improved rapid development,
-                debugging, deployment, and UI/UX workflows.
+                Dreamflow Buildathon 2025.
               </p>
 
             </div>
@@ -436,7 +428,7 @@ export default function Home() {
           </div>
 
           {/* Event 2 */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-green-400 transition">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
 
             <img
               src="/event2.png"
@@ -446,26 +438,64 @@ export default function Home() {
 
             <div className="p-10">
 
-              <p className="text-green-400 tracking-[0.2em] text-sm mb-3">
-                GOOGLE CLOUD • GEN AI ACADEMY
-              </p>
-
               <h3 className="text-4xl font-bold">
                 Google Cloud Gen AI Academy APAC 2026
               </h3>
 
               <p className="text-gray-400 mt-8 text-lg leading-9">
-                Completed Google Cloud Gen AI Academy APAC 2026 powered by Hack2skill.
-                Worked on scaling Nexus AI, a multi-agent AI system for students,
-                focusing on backend architecture and intelligent workflows.
+                Worked on scaling Nexus AI and building multi-agent AI workflows
+                during Google Cloud Gen AI Academy.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Event 3 */}
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
+
+            <div className="grid md:grid-cols-3 gap-2 bg-black">
+
+              <img
+                src="/event3-1.png"
+                alt="Event 3"
+                className="w-full h-[320px] object-cover"
+              />
+
+              <img
+                src="/event3-2.png"
+                alt="Event 3"
+                className="w-full h-[320px] object-cover"
+              />
+
+              <img
+                src="/event3-3.png"
+                alt="Event 3"
+                className="w-full h-[320px] object-cover"
+              />
+
+            </div>
+
+            <div className="p-10">
+
+              <h3 className="text-4xl font-bold">
+                Nexus AI – Digital Senior
+              </h3>
+
+              <p className="text-gray-400 mt-8 text-lg leading-9">
+
+                Built during the Gen AI Academic Cohort 1 Hackathon,
+                Nexus AI is a high-performance Agentic OS acting as a
+                Digital Senior for students.
+
               </p>
 
               <a
-                href="https://lnkd.in/gZiiT2ii"
+                href="https://lnkd.in/dZkjcQtZ"
                 target="_blank"
-                className="inline-block mt-8 text-green-400 hover:text-green-300 transition"
+                className="inline-block mt-8 text-purple-400"
               >
-                View Build Breakdown →
+                Read Full Medium Breakdown →
               </a>
 
             </div>
