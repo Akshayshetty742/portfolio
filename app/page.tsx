@@ -46,12 +46,11 @@ export default function Home() {
 
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
 
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-20 items-center">
 
-          {/* Left */}
           <div>
 
             <p className="text-cyan-400 tracking-[0.3em] mb-6 text-sm">
@@ -121,7 +120,7 @@ export default function Home() {
 
           </div>
 
-          {/* Right */}
+          {/* Image */}
           <div className="flex justify-center">
 
             <div className="relative">
@@ -267,30 +266,20 @@ export default function Home() {
           {/* Nexus AI */}
           <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 hover:-translate-y-3 transition duration-300">
 
-            <div className="h-60 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 flex items-center justify-center">
-
-              <h3 className="text-4xl font-bold text-cyan-400">
-                Nexus AI
-              </h3>
-
-            </div>
+            <img
+              src="/nexus.png"
+              alt="Nexus AI"
+              className="h-60 w-full object-cover"
+            />
 
             <div className="p-8">
 
-              <div className="flex items-center justify-between flex-wrap gap-4">
-
-                <h3 className="text-3xl font-bold">
-                  Nexus AI – Student Life OS
-                </h3>
-
-                <span className="text-sm text-gray-400">
-                  Feb 2026 - Mar 2026
-                </span>
-
-              </div>
+              <h3 className="text-3xl font-bold">
+                Nexus AI – Student Life OS
+              </h3>
 
               <p className="text-cyan-400 mt-3">
-                Team Project
+                Team Project • Feb 2026 - Mar 2026
               </p>
 
               <p className="text-gray-400 mt-6 leading-8">
@@ -298,22 +287,6 @@ export default function Home() {
                 and automation. Integrated Gemini AI to generate personalized
                 study plans from syllabus input.
               </p>
-
-              <ul className="mt-6 text-gray-400 space-y-3 leading-8">
-
-                <li>
-                  • Developed smart calendar, auto-rescheduler, and habit tracking
-                </li>
-
-                <li>
-                  • Collaborated using Git and structured branching workflows
-                </li>
-
-                <li>
-                  • Built centralized student productivity platform with AI integration
-                </li>
-
-              </ul>
 
               <a
                 href="https://github.com/Akshayshetty742/nexus-ai-os"
@@ -330,52 +303,26 @@ export default function Home() {
           {/* JourneyHub */}
           <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-pink-400 hover:-translate-y-3 transition duration-300">
 
-            <div className="h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/10 flex items-center justify-center">
-
-              <h3 className="text-4xl font-bold text-pink-400">
-                JourneyHub
-              </h3>
-
-            </div>
+            <img
+              src="/journeyhub.png"
+              alt="JourneyHub"
+              className="h-60 w-full object-cover"
+            />
 
             <div className="p-8">
 
-              <div className="flex items-center justify-between flex-wrap gap-4">
-
-                <h3 className="text-3xl font-bold">
-                  JourneyHub – Travel Booking Web App
-                </h3>
-
-                <span className="text-sm text-gray-400">
-                  May 2025 - Aug 2025
-                </span>
-
-              </div>
+              <h3 className="text-3xl font-bold">
+                JourneyHub – Travel Booking Web App
+              </h3>
 
               <p className="text-pink-400 mt-3">
-                Personal Project
+                Personal Project • May 2025 - Aug 2025
               </p>
 
               <p className="text-gray-400 mt-6 leading-8">
                 Developed responsive travel website using HTML, CSS, and JavaScript
                 with smooth UI and mobile responsiveness.
               </p>
-
-              <ul className="mt-6 text-gray-400 space-y-3 leading-8">
-
-                <li>
-                  • Designed interactive travel packages and pricing UI
-                </li>
-
-                <li>
-                  • Integrated booking and payment processing workflows
-                </li>
-
-                <li>
-                  • Deployed using Netlify and managed code using GitHub
-                </li>
-
-              </ul>
 
               <a
                 href="https://journeyhub-akshaya.netlify.app/"
@@ -392,165 +339,53 @@ export default function Home() {
         </div>
 
       </section>
+
       {/* Certificates */}
-<section
-  id="certificates"
-  className="max-w-6xl mx-auto px-6 py-32"
->
+      <section
+        id="certificates"
+        className="max-w-6xl mx-auto px-6 py-32"
+      >
 
-  <div className="text-center mb-20">
+        <div className="text-center mb-20">
 
-    <p className="text-cyan-400 tracking-[0.2em] mb-4">
-      CERTIFICATES
-    </p>
+          <p className="text-cyan-400 tracking-[0.2em] mb-4">
+            CERTIFICATES
+          </p>
 
-    <h2 className="text-5xl font-bold">
-      Certifications & Achievements
-    </h2>
+          <h2 className="text-5xl font-bold">
+            Certifications & Achievements
+          </h2>
 
-    <p className="text-gray-400 mt-6 text-lg">
-      Professional certifications and technical learning achievements.
-    </p>
+        </div>
 
-  </div>
+        <div className="grid md:grid-cols-2 gap-8">
 
-  <div className="grid md:grid-cols-2 gap-8">
+          {[
+            "Machine Learning with Python",
+            "Getting Started with Artificial Intelligence",
+            "Introduction to Generative AI",
+            "Web Development",
+            "Frontend Developer Bootcamp",
+            "Python (Basic)"
+          ].map((cert, index) => (
+            <div
+              key={index}
+              className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 transition"
+            >
+              <h3 className="text-2xl font-bold">
+                {cert}
+              </h3>
 
-    {/* Certificate 1 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
+              <p className="text-gray-400 mt-4">
+                Professional Certification
+              </p>
+            </div>
+          ))}
 
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        IBM
-      </p>
+        </div>
 
-      <h3 className="text-2xl font-bold">
-        Machine Learning with Python
-      </h3>
+      </section>
 
-      <p className="text-gray-400 mt-4 leading-8">
-        Learned machine learning fundamentals, model building,
-        and AI workflows using Python.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Dec 2025
-      </p>
-
-    </div>
-
-    {/* Certificate 2 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        IBM
-      </p>
-
-      <h3 className="text-2xl font-bold">
-        Getting Started with Artificial Intelligence
-      </h3>
-
-      <p className="text-gray-400 mt-4 leading-8">
-        Introduction to AI concepts, intelligent systems,
-        and practical AI applications.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Nov 2025
-      </p>
-
-    </div>
-
-    {/* Certificate 3 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        Google
-      </p>
-
-      <h3 className="text-2xl font-bold">
-        Introduction to Generative AI
-      </h3>
-
-      <p className="text-gray-400 mt-4 leading-8">
-        Learned fundamentals of generative AI,
-        large language models, and AI-powered workflows.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Nov 2024
-      </p>
-
-    </div>
-
-    {/* Certificate 4 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        LaunchED Global
-      </p>
-
-      <h3 className="text-2xl font-bold">
-        Web Development
-      </h3>
-
-      <p className="text-gray-400 mt-4 leading-8">
-        Built responsive websites and learned modern
-        frontend development practices.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Oct 2025
-      </p>
-
-    </div>
-
-    {/* Certificate 5 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        PESU I/O
-      </p>
-
-      <h3 className="text-2xl font-bold">
-        Frontend Developer Bootcamp
-      </h3>
-
-      <p className="text-gray-400 mt-4 leading-8">
-        Intensive frontend bootcamp focused on React,
-        UI/UX, and modern web technologies.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Nov 2024
-      </p>
-
-    </div>
-
-    {/* Certificate 6 */}
-    <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-cyan-400 hover:-translate-y-2 transition duration-300">
-
-      <p className="text-cyan-400 text-sm tracking-[0.2em] mb-3">
-        HackerRank
-      </p>
-
-      <h3 className="text-2xl font-bold">
-        Python (Basic)
-      </h3>
-
-      <p className="text-gray-400 mt-4 leading-8">
-        Demonstrated foundational Python programming
-        and problem-solving skills.
-      </p>
-
-      <p className="text-gray-500 mt-6">
-        Issued Sep 2024
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
       {/* Events */}
       <section
         id="events"
@@ -560,27 +395,80 @@ export default function Home() {
         <div className="text-center mb-20">
 
           <p className="text-cyan-400 tracking-[0.2em] mb-4">
-            EVENTS
+            EVENTS & EXPERIENCES
           </p>
 
           <h2 className="text-5xl font-bold">
-            Hackathons & Events
+            Hackathons & Tech Events
           </h2>
 
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-16">
 
-          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
+          {/* Event 1 */}
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition">
 
-            <h3 className="text-2xl font-semibold">
-              Hackathon Participant
-            </h3>
+            <img
+              src="/dreamflow-event.png"
+              alt="Dreamflow Buildathon"
+              className="w-full h-[550px] object-cover"
+            />
 
-            <p className="text-gray-400 mt-3">
-              Participated in AI and web development hackathons focused
-              on building innovative digital solutions.
-            </p>
+            <div className="p-10">
+
+              <p className="text-cyan-400 tracking-[0.2em] text-sm mb-3">
+                BUILDATHON 2025
+              </p>
+
+              <h3 className="text-4xl font-bold">
+                Dreamflow Buildathon
+              </h3>
+
+              <p className="text-gray-400 mt-8 text-lg leading-9">
+                Successfully completed and shipped a functional application during
+                Dreamflow Buildathon 2025. Improved rapid development,
+                debugging, deployment, and UI/UX workflows.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Event 2 */}
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-green-400 transition">
+
+            <img
+              src="/event2.png"
+              alt="Google Cloud Gen AI Academy"
+              className="w-full h-[550px] object-cover"
+            />
+
+            <div className="p-10">
+
+              <p className="text-green-400 tracking-[0.2em] text-sm mb-3">
+                GOOGLE CLOUD • GEN AI ACADEMY
+              </p>
+
+              <h3 className="text-4xl font-bold">
+                Google Cloud Gen AI Academy APAC 2026
+              </h3>
+
+              <p className="text-gray-400 mt-8 text-lg leading-9">
+                Completed Google Cloud Gen AI Academy APAC 2026 powered by Hack2skill.
+                Worked on scaling Nexus AI, a multi-agent AI system for students,
+                focusing on backend architecture and intelligent workflows.
+              </p>
+
+              <a
+                href="https://lnkd.in/gZiiT2ii"
+                target="_blank"
+                className="inline-block mt-8 text-green-400 hover:text-green-300 transition"
+              >
+                View Build Breakdown →
+              </a>
+
+            </div>
 
           </div>
 
@@ -604,7 +492,6 @@ export default function Home() {
 
         <p className="text-gray-400 text-lg leading-9">
           Interested in collaborations, internships, or exciting projects?
-          Let’s connect together.
         </p>
 
         <div className="mt-12 flex justify-center gap-6 flex-wrap">
