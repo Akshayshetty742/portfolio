@@ -251,7 +251,7 @@ export default function Home() {
                 href="https://journeyhub-akshaya.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                rel="noopener noreferrer"
+                
                 className="inline-block mt-8 text-pink-400"
               >
                 View Project →
