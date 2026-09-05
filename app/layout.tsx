@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     siteName: "Akshaya B Portfolio",
     type: "website",
   },
+  verification: {
+    google: "Yz6Jl2NxPxbZiRBtDZLNVMZerzh6sIxOaKh4suLdces",
+  },
 };
 
 export default function RootLayout({
