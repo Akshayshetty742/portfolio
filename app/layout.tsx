@@ -19,13 +19,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Akshaya B | AI & Frontend Developer | PES University",
-  description: "Portfolio of Akshaya B, CSE (AI & ML) student at PES University. Front-End & AI Developer building full-stack web applications, AI agents, and networking systems.",
-  keywords: ["Akshaya B", "Akshay Shetty", "PES University", "Portfolio", "Frontend Developer", "AI Developer"],
+  title: "Akshaya B | PES University | AI & Frontend Developer",
+  description: "Official portfolio of Akshaya B, CSE (AI & ML) student at PES University Bangalore. Full-stack developer specializing in React, Next.js, AI Agents, and Web Applications.",
+  keywords: [
+    "Akshaya B",
+    "Akshaya B PES University",
+    "Akshaya B PES",
+    "Akshaya B portfolio",
+    "Akshay Shetty PES University",
+    "Akshaya B Bangalore"
+  ],
   authors: [{ name: "Akshaya B" }],
   openGraph: {
-    title: "Akshaya B | Portfolio",
-    description: "CSE (AI & ML) Student at PES University | AI & Frontend Developer",
+    title: "Akshaya B | PES University Portfolio",
+    description: "CSE (AI & ML) student at PES University Bangalore.",
     url: "https://v0-personal-portfolio-website-puce-iota.vercel.app",
     siteName: "Akshaya B Portfolio",
     type: "website",
