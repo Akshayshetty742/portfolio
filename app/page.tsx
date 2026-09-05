@@ -271,23 +271,23 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden font-sans">
+    <main className="min-h-screen w-full bg-[#050505] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden font-sans">
       {/* Background Ambient Glows */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[500px] bg-cyan-500/15 blur-[160px] rounded-full" />
-        <div className="absolute top-[25%] -left-32 w-[500px] h-[500px] bg-purple-600/10 blur-[180px] rounded-full" />
-        <div className="absolute top-[55%] -right-32 w-[550px] h-[550px] bg-blue-600/10 blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-cyan-600/10 blur-[170px] rounded-full" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] lg:w-[900px] h-[340px] sm:h-[500px] bg-cyan-500/15 blur-[120px] sm:blur-[160px] rounded-full" />
+        <div className="absolute top-[25%] -left-32 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-purple-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
+        <div className="absolute top-[55%] -right-32 w-[300px] sm:w-[550px] h-[300px] sm:h-[550px] bg-blue-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] sm:w-[700px] h-[250px] sm:h-[400px] bg-cyan-600/10 blur-[130px] sm:blur-[170px] rounded-full" />
       </div>
 
       {/* Sticky Header Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/75 border-b border-slate-800/80 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-slate-800/80 transition-all duration-300 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           <Link
             href="#"
-            className="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
+            className="group flex items-center gap-2.5 text-lg sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition shrink-0 text-sm sm:text-base">
               A
             </div>
             <span>
@@ -296,12 +296,12 @@ export default function Home() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-300">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="hover:text-cyan-400 transition-colors duration-200 py-1"
+                className="hover:text-cyan-400 transition-colors duration-200 py-1.5"
               >
                 {link.name}
               </a>
@@ -315,56 +315,57 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               download="Akshaya_B_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 border border-slate-800 hover:border-cyan-400/50 hover:bg-white/10 transition duration-200"
+              className="inline-flex items-center justify-center min-h-[44px] gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 border border-slate-800 hover:border-cyan-400/50 hover:bg-white/10 transition duration-200"
             >
               <Download size={14} className="w-3.5 h-3.5 shrink-0 text-cyan-400" />
               <span>Resume</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-black bg-cyan-400 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-200"
+              className="inline-flex items-center justify-center min-h-[44px] gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-black bg-cyan-400 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-200"
             >
               Let&apos;s Connect
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger Button (44px min touch target) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="lg:hidden p-2 rounded-xl bg-white/5 border border-slate-800 text-slate-300 hover:text-white hover:bg-white/10 transition"
+            className="flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-white/5 border border-slate-800 text-slate-300 hover:text-white hover:bg-white/10 transition active:scale-95"
           >
             {mobileMenuOpen ? (
-              <X size={24} className="w-6 h-6 shrink-0" />
+              <X size={22} className="w-5.5 h-5.5 shrink-0" />
             ) : (
-              <Menu size={24} className="w-6 h-6 shrink-0" />
+              <Menu size={22} className="w-5.5 h-5.5 shrink-0" />
             )}
           </button>
         </div>
 
-        {/* Mobile Dropdown Nav */}
+        {/* Mobile Dropdown Nav Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-b border-slate-800 bg-black/95 backdrop-blur-2xl px-6 py-6 space-y-4">
-            <div className="flex flex-col space-y-3">
+          <div className="md:hidden border-b border-slate-800 bg-black/95 backdrop-blur-2xl px-4 py-5 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 hover:text-cyan-400 text-base font-medium transition"
+                  className="flex items-center justify-between min-h-[44px] px-3.5 py-2.5 rounded-xl text-slate-200 hover:bg-white/5 hover:text-cyan-400 text-sm font-medium transition"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  <ChevronRight size={14} className="text-slate-500" />
                 </a>
               ))}
             </div>
-            <div className="pt-4 border-t border-slate-800 flex flex-col gap-3">
+            <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
               <a
                 href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Akshaya_B_Resume.pdf"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-white/5 border border-slate-800 text-white hover:border-cyan-400/50 transition"
+                className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-white/5 border border-slate-800 text-white hover:border-cyan-400/50 transition active:scale-[0.98]"
               >
                 <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                 <span>Download Resume</span>
@@ -372,7 +373,7 @@ export default function Home() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition"
+                className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition active:scale-[0.98]"
               >
                 Get in Touch
               </a>
@@ -382,18 +383,18 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 sm:px-8 py-16 sm:py-24">
-        <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative z-10 py-12 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex items-center justify-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 text-center lg:text-left">
+          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Title / Role Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
-              <Sparkles size={16} className="w-4 h-4 shrink-0" />
-              <span>AI • FRONTEND • CREATOR</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(34,211,238,0.15)] max-w-full">
+              <Sparkles size={14} className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">AI • FRONTEND • CREATOR</span>
             </div>
 
             {/* Main Name Heading */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.1]">
               Hi, I&apos;m{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500">
                 Akshaya B
@@ -401,7 +402,7 @@ export default function Home() {
             </h1>
 
             {/* Headline Subtitle */}
-            <h2 className="mt-3 text-lg sm:text-xl md:text-2xl font-semibold text-slate-200">
+            <h2 className="mt-3 text-base sm:text-xl md:text-2xl font-semibold text-slate-200">
               CSE (AI &amp; ML) Student at PES University
             </h2>
 
@@ -411,15 +412,15 @@ export default function Home() {
               <span>Bangalore Urban, Karnataka, India</span>
             </p>
 
-            <p className="mt-6 text-slate-300 sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+            <p className="mt-5 sm:mt-6 text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
               Aspiring Front-End Developer and CSE (AI &amp; ML) student at PES University with hands-on experience building full-stack web applications, AI-powered productivity tools, networking systems, and software projects. Experienced with React.js, JavaScript, Python, Node.js, FastAPI, databases, Git/GitHub, and cloud deployment.
             </p>
 
-            {/* Hero CTAs */}
-            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5">
+            {/* Hero CTAs (responsive touch targets) */}
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-5 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-4 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 <span>View Projects</span>
                 <ChevronRight size={16} className="w-4 h-4 shrink-0" />
@@ -430,38 +431,38 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Akshaya_B_Resume.pdf"
-                className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-4 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-white/5 hover:bg-white/10 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-3.5 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                 <span>Download Resume</span>
               </a>
             </div>
 
-            {/* Social & Contact Badges */}
-            <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-sm text-slate-400">
+            {/* Social Badges */}
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5 text-sm text-slate-400 w-full">
               <a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
                 <GithubIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>GitHub</span>
               </a>
-              <span className="text-slate-700">•</span>
+              <span className="text-slate-700 hidden sm:inline">•</span>
               <a
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
                 <LinkedinIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>LinkedIn</span>
               </a>
-              <span className="text-slate-700">•</span>
+              <span className="text-slate-700 hidden sm:inline">•</span>
               <a
                 href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
                 <Mail size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>Email</span>
@@ -469,21 +470,21 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Hero Image Card (No caption below) */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative group w-full max-w-[320px] sm:max-w-[380px]">
+          {/* Right Hero Image Card (Responsive sizing & no caption below) */}
+          <div className="lg:col-span-5 flex justify-center w-full">
+            <div className="relative group w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px]">
               {/* Glowing Aura Ring */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/25 via-blue-500/20 to-purple-600/25 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition duration-500" />
+              <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/25 via-blue-500/20 to-purple-600/25 rounded-3xl blur-xl sm:blur-2xl opacity-75 group-hover:opacity-100 transition duration-500" />
 
               {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-800 group-hover:border-cyan-500/40 bg-black/60 backdrop-blur-sm p-3 shadow-2xl transition duration-500">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-800 group-hover:border-cyan-500/40 bg-black/60 backdrop-blur-sm p-2.5 sm:p-3 shadow-2xl transition duration-500">
                 <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-900">
                   <Image
                     src="/akshay.jpeg"
                     alt="Akshaya B"
                     fill
                     priority
-                    sizes="(max-width: 768px) 320px, 380px"
+                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 360px"
                     className="object-cover object-center group-hover:scale-105 transition duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -495,67 +496,67 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
-        <div className="max-w-6xl mx-auto">
+      <section id="about" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 max-w-6xl mx-auto w-full">
+        <div>
           <div className="flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
             <GraduationCap size={16} className="w-4 h-4 shrink-0" />
             <span>About Me</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
                 Engineering modern web apps, intelligent AI workflows &amp; robust networking systems.
               </h2>
-              <p className="mt-6 text-slate-300 leading-relaxed text-base sm:text-lg">
+              <p className="mt-4 sm:mt-6 text-slate-300 leading-relaxed text-sm sm:text-base md:text-lg">
                 I am a Computer Science Engineering student specializing in AI &amp; ML at PES University. My technical journey spans building responsive front-end applications with React.js, designing autonomous AI assistants with Gemini and FastAPI, and developing performant network systems using multithreaded socket programming and SDN flow controllers.
               </p>
-              <p className="mt-4 text-slate-400 leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-slate-400 leading-relaxed text-sm sm:text-base">
                 Whether creating intelligent student operating systems like Nexus AI or implementing low-level version control systems in C, I am driven by creating high-impact, performant, and reliable software.
               </p>
             </div>
 
             {/* Pillars Grid */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3.5">
                   <Layers size={20} className="w-5 h-5 shrink-0" />
                 </div>
-                <h3 className="font-semibold text-white text-lg">Front-End Focus</h3>
-                <p className="text-cyan-400 text-sm mt-1">React &amp; Responsive UI</p>
+                <h3 className="font-semibold text-white text-base sm:text-lg">Front-End Focus</h3>
+                <p className="text-cyan-400 text-xs sm:text-sm mt-1">React &amp; Responsive UI</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Crafting clean, accessible, and high-performance component architectures.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-purple-500/40 transition">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-purple-500/40 transition">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3.5">
                   <Cpu size={20} className="w-5 h-5 shrink-0" />
                 </div>
-                <h3 className="font-semibold text-white text-lg">AI &amp; Multi-Agent</h3>
-                <p className="text-purple-400 text-sm mt-1">LLMs &amp; Gemini AI</p>
+                <h3 className="font-semibold text-white text-base sm:text-lg">AI &amp; Multi-Agent</h3>
+                <p className="text-purple-400 text-xs sm:text-sm mt-1">LLMs &amp; Gemini AI</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Integrating intelligent workflows and multi-agent coordination systems.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-emerald-500/40 transition">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-emerald-500/40 transition">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3.5">
                   <ShieldCheck size={20} className="w-5 h-5 shrink-0" />
                 </div>
-                <h3 className="font-semibold text-white text-lg">Systems &amp; Security</h3>
-                <p className="text-emerald-400 text-sm mt-1">SSL/TLS &amp; Sockets</p>
+                <h3 className="font-semibold text-white text-base sm:text-lg">Systems &amp; Security</h3>
+                <p className="text-emerald-400 text-xs sm:text-sm mt-1">SSL/TLS &amp; Sockets</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Building concurrent client-server systems handling ~6,500 req/sec.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-amber-500/40 transition">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-amber-500/40 transition">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3.5">
                   <Network size={20} className="w-5 h-5 shrink-0" />
                 </div>
-                <h3 className="font-semibold text-white text-lg">Networking &amp; SDN</h3>
-                <p className="text-amber-400 text-sm mt-1">Ryu &amp; OpenFlow</p>
+                <h3 className="font-semibold text-white text-base sm:text-lg">Networking &amp; SDN</h3>
+                <p className="text-amber-400 text-xs sm:text-sm mt-1">Ryu &amp; OpenFlow</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Implementing dynamic firewall filtering on simulated network topologies.
                 </p>
@@ -566,32 +567,32 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 sm:py-32 px-6 sm:px-8 relative bg-black/40 border-t border-slate-800/60">
+      <section id="experience" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
               <Briefcase size={16} className="w-4 h-4 shrink-0" />
               <span>Career Journey</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Experience
             </h2>
-            <p className="mt-4 text-slate-400 text-base">
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
               Hands-on engineering experience, intensive bootcamps, and real-world project deliveries.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 py-2">
+            <div className="relative pl-5 sm:pl-8 border-l-2 border-cyan-500/30 py-1">
               <div className="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_#22d3ee]" />
 
-              <div className="p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 backdrop-blur-sm">
+              <div className="p-5 sm:p-8 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 backdrop-blur-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-800/80">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    <h3 className="text-lg sm:text-2xl font-bold text-white leading-snug">
                       Front-End Development Bootcamp Student
                     </h3>
-                    <p className="text-cyan-400 font-medium text-sm mt-1">
+                    <p className="text-cyan-400 font-medium text-xs sm:text-sm mt-1">
                       PESU I/O — Bangalore, India
                     </p>
                   </div>
@@ -600,33 +601,33 @@ export default function Home() {
                   </span>
                 </div>
 
-                <ul className="space-y-3.5 text-slate-300 text-sm sm:text-base leading-relaxed">
-                  <li className="flex items-start gap-3">
-                    <span className="text-cyan-400 mt-1.5 font-bold">•</span>
+                <ul className="space-y-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 mt-1 font-bold">•</span>
                     <span>
                       Completed an intensive Front-End Development Bootcamp focused on <strong className="text-white">HTML, CSS, JavaScript, and React.js</strong>.
                     </span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-cyan-400 mt-1.5 font-bold">•</span>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 mt-1 font-bold">•</span>
                     <span>
                       Built responsive web applications and implemented interactive UI components; gained hands-on experience with <strong className="text-white">Git and GitHub</strong>.
                     </span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-cyan-400 mt-1.5 font-bold">•</span>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-cyan-400 mt-1 font-bold">•</span>
                     <span>
                       Engineered a portfolio project using React.js, HTML, and CSS, achieving <strong className="text-white">full functionality across 100% of tested devices and browsers</strong> within a 4-week sprint cycle.
                     </span>
                   </li>
                 </ul>
 
-                <div className="mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">React.js</span>
-                  <span className="px-3 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">HTML5 / CSS3</span>
-                  <span className="px-3 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">JavaScript</span>
-                  <span className="px-3 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Responsive Design</span>
-                  <span className="px-3 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Git &amp; GitHub</span>
+                <div className="mt-5 sm:mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">React.js</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">HTML5 / CSS3</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">JavaScript</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Responsive Design</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Git &amp; GitHub</span>
                 </div>
               </div>
             </div>
@@ -635,27 +636,27 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
+      <section id="projects" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
               <FolderGit2 size={16} className="w-4 h-4 shrink-0" />
               <span>Engineered Works</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Featured Projects
             </h2>
-            <p className="mt-4 text-slate-400 text-base">
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
               Showcasing software systems across AI agents, high-concurrency socket programming, SDN security, and modern web applications.
             </p>
           </div>
 
           {/* Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className={`group relative rounded-3xl bg-gradient-to-b ${project.gradient} border border-slate-800 ${project.glowColor} p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl`}
+                className={`group relative rounded-3xl bg-gradient-to-b ${project.gradient} border border-slate-800 ${project.glowColor} p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
@@ -669,29 +670,29 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${project.title} on GitHub`}
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-slate-800 hover:border-cyan-400/50 transition shrink-0"
+                      className="min-h-[38px] min-w-[38px] flex items-center justify-center p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-slate-800 hover:border-cyan-400/50 transition shrink-0"
                     >
                       <GithubIcon size={16} className="w-4 h-4 shrink-0" />
                     </a>
                   </div>
 
-                  <p className="text-[11px] font-medium text-slate-400 mb-2">
+                  <p className="text-[11px] font-medium text-slate-400 mb-1.5">
                     {project.type}
                   </p>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition leading-snug">
                     {project.title}
                   </h3>
 
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-3 mb-4">
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2.5 mb-3.5">
                     {project.description}
                   </p>
 
                   {/* Bullet points from resume */}
-                  <ul className="space-y-2 mb-4 text-xs text-slate-400 leading-relaxed">
+                  <ul className="space-y-1.5 mb-4 text-xs text-slate-400 leading-relaxed">
                     {project.bullets.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-cyan-400 mt-1">•</span>
+                        <span className="text-cyan-400 mt-0.5">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -700,7 +701,7 @@ export default function Home() {
 
                 <div>
                   {/* Tech Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80 mb-4">
+                  <div className="flex flex-wrap gap-1.5 pt-3.5 border-t border-slate-800/80 mb-3.5">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -711,12 +712,12 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* GitHub Action Button */}
+                  {/* GitHub Action Button (min 44px tap target) */}
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition group/link"
+                    className="inline-flex items-center min-h-[44px] gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition group/link"
                   >
                     <span>View Repository</span>
                     <ArrowUpRight size={14} className="w-3.5 h-3.5 shrink-0 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
@@ -729,34 +730,34 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 sm:py-32 px-6 sm:px-8 relative bg-black/40 border-t border-slate-800/60">
+      <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
               <Code2 size={16} className="w-4 h-4 shrink-0" />
               <span>Technical Arsenal</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Skills &amp; Technologies
             </h2>
-            <p className="mt-4 text-slate-400 text-base">
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
               A categorized summary of programming languages, frameworks, systems, databases, and development tooling.
             </p>
           </div>
 
           {/* Categorized Skill Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((category) => (
               <div
                 key={category.title}
-                className={`p-6 sm:p-7 rounded-3xl bg-white/[0.02] border ${category.borderColor} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between`}
+                className={`p-5 sm:p-7 rounded-3xl bg-white/[0.02] border ${category.borderColor} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between`}
               >
                 <div>
-                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800/80">
+                  <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800/80">
                     <div className="p-2 rounded-xl bg-white/5 border border-slate-800">
                       {category.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-white">{category.title}</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-white">{category.title}</h3>
                   </div>
 
                   {/* Skill Badges / Pills */}
@@ -778,39 +779,39 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
+      <section id="education" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
               <BookOpen size={16} className="w-4 h-4 shrink-0" />
               <span>Academic Background</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Education
             </h2>
-            <p className="mt-4 text-slate-400 text-base">
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
               Formal academic credentials and engineering specialization.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {education.map((edu, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 flex flex-col justify-between"
+                className="p-5 sm:p-7 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-3.5">
                     <span className="text-xs font-semibold text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                       {edu.period}
                     </span>
                     <GraduationCap size={16} className="w-4 h-4 shrink-0 text-slate-400" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 leading-snug">
                     {edu.degree}
                   </h3>
-                  <p className="text-sm font-medium text-slate-300 mb-3">
+                  <p className="text-xs sm:text-sm font-medium text-slate-300 mb-2.5">
                     {edu.institution}
                   </p>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -824,43 +825,44 @@ export default function Home() {
       </section>
 
       {/* Events & Hackathons Showcase */}
-      <section id="events" className="py-24 sm:py-32 px-6 sm:px-8 relative bg-black/40 border-t border-slate-800/60">
+      <section id="events" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
               <Calendar size={16} className="w-4 h-4 shrink-0" />
               <span>Real-World Impact</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Hackathons &amp; Activities
             </h2>
-            <p className="mt-4 text-slate-400 text-base">
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
               National hackathons, generative AI academies, and project buildathons.
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Event 1 - Dreamflow */}
             <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-cyan-500/40 transition">
-              <div className="relative w-full h-[240px] sm:h-[380px] md:h-[460px]">
+              <div className="relative w-full h-[200px] sm:h-[320px] md:h-[420px]">
                 <Image
                   src="/dreamflow-event.png"
                   alt="Dreamflow Buildathon"
                   fill
+                  sizes="(max-width: 768px) 100vw, 1100px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-6 sm:p-10">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="p-5 sm:p-8 md:p-10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                   <span className="text-xs font-semibold text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                     Buildathon 2025
                   </span>
                   <span className="text-xs text-slate-400">Shipped MVP</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   Dreamflow Buildathon
                 </h3>
-                <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
                   Collaborated intensively to design, architect, and ship a fully functional web application prototype during Dreamflow Buildathon 2025.
                 </p>
               </div>
@@ -868,25 +870,26 @@ export default function Home() {
 
             {/* Event 2 - Google Cloud Gen AI Academy */}
             <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-purple-500/40 transition">
-              <div className="relative w-full h-[240px] sm:h-[380px] md:h-[460px]">
+              <div className="relative w-full h-[200px] sm:h-[320px] md:h-[420px]">
                 <Image
                   src="/event2.png"
                   alt="Google Cloud Gen AI Academy"
                   fill
+                  sizes="(max-width: 768px) 100vw, 1100px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-6 sm:p-10">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="p-5 sm:p-8 md:p-10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                   <span className="text-xs font-semibold text-purple-400 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
                     APAC 2026 Cohort
                   </span>
                   <span className="text-xs text-slate-400">Google Cloud</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   Google Cloud Gen AI Academy APAC 2026
                 </h3>
-                <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
                   Engineered multi-agent AI workflows and scaled Nexus AI using Google Cloud generative AI infrastructure, prompt orchestration, and intelligent agent pipelines.
                 </p>
               </div>
@@ -894,35 +897,35 @@ export default function Home() {
 
             {/* Event 3 - Nexus AI Presentation */}
             <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-cyan-500/40 transition">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-black/80 p-2">
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event3-1.png" alt="Nexus AI Showcase 1" fill className="object-cover" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-black/80 p-2">
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event3-1.png" alt="Nexus AI Showcase 1" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event3-2.png" alt="Nexus AI Showcase 2" fill className="object-cover" />
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event3-2.png" alt="Nexus AI Showcase 2" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event3-3.png" alt="Nexus AI Showcase 3" fill className="object-cover" />
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event3-3.png" alt="Nexus AI Showcase 3" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
               </div>
-              <div className="p-6 sm:p-10">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="p-5 sm:p-8 md:p-10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                   <span className="text-xs font-semibold text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                     Academic Cohort 1
                   </span>
                   <span className="text-xs text-slate-400">Agentic Hackathon</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   Nexus AI – Digital Senior Presentation
                 </h3>
-                <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
                   Presented our autonomous student assistant to panels and peers, demonstrating automated academic workload distribution, deadline parsing, and Gemini AI query workflows.
                 </p>
                 <a
                   href="https://medium.com/@manasviagarkar/beyond-chatbots-building-an-autonomous-student-os-with-the-senior-top-protocol-077bff7f3d68"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-purple-400 hover:text-purple-300 transition"
+                  className="inline-flex items-center min-h-[44px] gap-2 mt-4 text-xs sm:text-sm font-semibold text-purple-400 hover:text-purple-300 transition"
                 >
                   <span>Read Medium Architecture Breakdown</span>
                   <ArrowUpRight size={16} className="w-4 h-4 shrink-0" />
@@ -932,28 +935,28 @@ export default function Home() {
 
             {/* Event 4 - LaunchED Internship */}
             <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-amber-500/40 transition">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-black/80 p-2">
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event4-1.png" alt="LaunchED 1" fill className="object-cover" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-black/80 p-2">
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event4-1.png" alt="LaunchED 1" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event4-2.png" alt="LaunchED 2" fill className="object-cover" />
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event4-2.png" alt="LaunchED 2" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className="relative h-[220px] sm:h-[280px] rounded-xl overflow-hidden">
-                  <Image src="/event4-3.png" alt="LaunchED 3" fill className="object-cover" />
+                <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
+                  <Image src="/event4-3.png" alt="LaunchED 3" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
                 </div>
               </div>
-              <div className="p-6 sm:p-10">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="p-5 sm:p-8 md:p-10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
                   <span className="text-xs font-semibold text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
                     Mentorship &amp; Internship
                   </span>
                   <span className="text-xs text-slate-400">LaunchED Global</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   Web Development Mentorship Program
                 </h3>
-                <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="mt-3 text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
                   Successfully completed comprehensive frontend training covering responsive web architectures, React.js ecosystem patterns, component lifecycle management, and production workflows.
                 </p>
               </div>
@@ -963,31 +966,31 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
+      <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
             <Mail size={16} className="w-4 h-4 shrink-0" />
             <span>Get In Touch</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 sm:mb-6">
             Let&apos;s Build Something <span className="text-cyan-400">Extraordinary</span>
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12">
             I am always open to discussing new engineering opportunities, internships, open-source collaborations, or exciting software projects.
           </p>
 
           {/* Quick Contact Card */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-slate-800 backdrop-blur-xl max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-black/60 border border-slate-800 mb-8">
-              <div className="flex items-center gap-3 text-left">
+          <div className="p-5 sm:p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-slate-800 backdrop-blur-xl max-w-2xl mx-auto w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-black/60 border border-slate-800 mb-6 sm:mb-8 w-full">
+              <div className="flex items-center gap-3 text-left w-full sm:w-auto">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
                   <Mail size={20} className="w-5 h-5 shrink-0" />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400">Direct Email</p>
-                  <p className="text-sm sm:text-base font-mono font-medium text-white select-all">
+                <div className="min-w-0 flex-1">
+                  <p className="text-[11px] text-slate-400">Direct Email</p>
+                  <p className="text-xs sm:text-sm md:text-base font-mono font-medium text-white truncate select-all">
                     {email}
                   </p>
                 </div>
@@ -995,7 +998,7 @@ export default function Home() {
 
               <button
                 onClick={handleCopyEmail}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/15 border border-slate-800 text-slate-200 hover:text-white transition cursor-pointer"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/15 border border-slate-800 text-slate-200 hover:text-white transition cursor-pointer active:scale-95 shrink-0"
               >
                 {copiedEmail ? (
                   <>
@@ -1005,17 +1008,17 @@ export default function Home() {
                 ) : (
                   <>
                     <Copy size={16} className="w-4 h-4 shrink-0" />
-                    <span>Copy</span>
+                    <span>Copy Email</span>
                   </>
                 )}
               </button>
             </div>
 
-            {/* Social Connection Buttons with Explicit Links */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* Social Connection Buttons (min 48px touch targets) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
               <a
                 href={`mailto:${email}`}
-                className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition shadow-[0_0_25px_rgba(34,211,238,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition shadow-[0_0_25px_rgba(34,211,238,0.3)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Mail size={18} className="w-4.5 h-4.5 shrink-0" />
                 <span>Send Email</span>
@@ -1025,7 +1028,7 @@ export default function Home() {
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
               >
                 <LinkedinIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>LinkedIn</span>
@@ -1035,7 +1038,7 @@ export default function Home() {
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
               >
                 <GithubIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>GitHub</span>
@@ -1046,8 +1049,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 py-10 px-6 sm:px-8 bg-black/80">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+      <footer className="border-t border-slate-800/80 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-black/80 w-full">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-xs text-slate-400 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-white">Akshaya B</span>
             <span>•</span>
@@ -1056,13 +1059,13 @@ export default function Home() {
 
           <p>© {new Date().getFullYear()} Akshaya B. All rights reserved.</p>
 
-          <div className="flex items-center gap-6">
-            <a href="#about" className="hover:text-cyan-400 transition">About</a>
-            <a href="#experience" className="hover:text-cyan-400 transition">Experience</a>
-            <a href="#projects" className="hover:text-cyan-400 transition">Projects</a>
-            <a href="#skills" className="hover:text-cyan-400 transition">Skills</a>
-            <a href="#education" className="hover:text-cyan-400 transition">Education</a>
-            <a href="#contact" className="hover:text-cyan-400 transition">Contact</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <a href="#about" className="hover:text-cyan-400 transition py-1">About</a>
+            <a href="#experience" className="hover:text-cyan-400 transition py-1">Experience</a>
+            <a href="#projects" className="hover:text-cyan-400 transition py-1">Projects</a>
+            <a href="#skills" className="hover:text-cyan-400 transition py-1">Skills</a>
+            <a href="#education" className="hover:text-cyan-400 transition py-1">Education</a>
+            <a href="#contact" className="hover:text-cyan-400 transition py-1">Contact</a>
           </div>
         </div>
       </footer>
