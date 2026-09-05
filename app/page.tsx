@@ -25,16 +25,16 @@ import {
   ShieldCheck,
   Wrench,
   Cloud,
-  Database,
-  Phone,
   MapPin,
   BookOpen,
 } from "lucide-react";
 
-function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
+function GithubIcon({ className = "w-5 h-5 shrink-0", size = 20 }: { className?: string; size?: number }) {
   return (
     <svg
       className={className}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -48,10 +48,12 @@ function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function LinkedinIcon({ className = "w-5 h-5" }: { className?: string }) {
+function LinkedinIcon({ className = "w-5 h-5 shrink-0", size = 20 }: { className?: string; size?: number }) {
   return (
     <svg
       className={className}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -71,7 +73,6 @@ export default function Home() {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const email = "shettyakshay742@gmail.com";
-  const phone = "+91 9019844494";
   const githubUrl = "https://github.com/Akshayshetty742";
   const linkedinUrl = "https://linkedin.com/in/akshaya-b-618b63269";
   const resumeUrl = "/resume.pdf";
@@ -95,37 +96,37 @@ export default function Home() {
   const skillCategories = [
     {
       title: "Languages",
-      icon: <Code2 className="w-5 h-5 text-cyan-400" />,
+      icon: <Code2 size={20} className="w-5 h-5 shrink-0 text-cyan-400" />,
       borderColor: "border-slate-800 hover:border-cyan-500/40",
       skills: ["C", "C++", "Python", "JavaScript", "TypeScript"],
     },
     {
       title: "Frontend Development",
-      icon: <Layers className="w-5 h-5 text-blue-400" />,
+      icon: <Layers size={20} className="w-5 h-5 shrink-0 text-blue-400" />,
       borderColor: "border-slate-800 hover:border-blue-500/40",
       skills: ["HTML", "CSS", "React.js", "Responsive Web Design"],
     },
     {
       title: "Backend & APIs",
-      icon: <Terminal className="w-5 h-5 text-violet-400" />,
+      icon: <Terminal size={20} className="w-5 h-5 shrink-0 text-violet-400" />,
       borderColor: "border-slate-800 hover:border-violet-500/40",
       skills: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
     },
     {
       title: "AI / ML",
-      icon: <Cpu className="w-5 h-5 text-emerald-400" />,
+      icon: <Cpu size={20} className="w-5 h-5 shrink-0 text-emerald-400" />,
       borderColor: "border-slate-800 hover:border-emerald-500/40",
       skills: ["Gemini AI", "AI Agents", "Multi-Agent Systems"],
     },
     {
       title: "Databases & Cloud",
-      icon: <Cloud className="w-5 h-5 text-sky-400" />,
+      icon: <Cloud size={20} className="w-5 h-5 shrink-0 text-sky-400" />,
       borderColor: "border-slate-800 hover:border-sky-500/40",
       skills: ["MongoDB", "Firebase", "Google Cloud Run", "Netlify", "Vercel"],
     },
     {
       title: "Networking & Security",
-      icon: <Network className="w-5 h-5 text-pink-400" />,
+      icon: <Network size={20} className="w-5 h-5 shrink-0 text-pink-400" />,
       borderColor: "border-slate-800 hover:border-pink-500/40",
       skills: [
         "TCP/IP",
@@ -137,7 +138,7 @@ export default function Home() {
     },
     {
       title: "Tools & Environments",
-      icon: <Wrench className="w-5 h-5 text-amber-400" />,
+      icon: <Wrench size={20} className="w-5 h-5 shrink-0 text-amber-400" />,
       borderColor: "border-slate-800 hover:border-amber-500/40",
       skills: ["Git", "GitHub", "VS Code", "Linux"],
     },
@@ -286,7 +287,7 @@ export default function Home() {
             href="#"
             className="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition shrink-0">
               A
             </div>
             <span>
@@ -316,8 +317,8 @@ export default function Home() {
               download="Akshaya_B_Resume.pdf"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 border border-slate-800 hover:border-cyan-400/50 hover:bg-white/10 transition duration-200"
             >
-              <Download className="w-3.5 h-3.5 text-cyan-400" />
-              Resume
+              <Download size={14} className="w-3.5 h-3.5 shrink-0 text-cyan-400" />
+              <span>Resume</span>
             </a>
             <a
               href="#contact"
@@ -333,7 +334,11 @@ export default function Home() {
             aria-label="Toggle navigation menu"
             className="lg:hidden p-2 rounded-xl bg-white/5 border border-slate-800 text-slate-300 hover:text-white hover:bg-white/10 transition"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X size={24} className="w-6 h-6 shrink-0" />
+            ) : (
+              <Menu size={24} className="w-6 h-6 shrink-0" />
+            )}
           </button>
         </div>
 
@@ -361,8 +366,8 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-white/5 border border-slate-800 text-white hover:border-cyan-400/50 transition"
               >
-                <Download className="w-4 h-4 text-cyan-400" />
-                Download Resume
+                <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
+                <span>Download Resume</span>
               </a>
               <a
                 href="#contact"
@@ -383,7 +388,7 @@ export default function Home() {
           <div className="lg:col-span-7 text-center lg:text-left">
             {/* Title / Role Pill */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
-              <Sparkles className="w-4 h-4" />
+              <Sparkles size={16} className="w-4 h-4 shrink-0" />
               <span>AI • FRONTEND • CREATOR</span>
             </div>
 
@@ -402,7 +407,7 @@ export default function Home() {
 
             {/* Location & Summary from Resume */}
             <p className="mt-2 text-xs sm:text-sm text-cyan-400/90 font-mono flex items-center justify-center lg:justify-start gap-1.5">
-              <MapPin className="w-3.5 h-3.5" />
+              <MapPin size={14} className="w-3.5 h-3.5 shrink-0" />
               <span>Bangalore Urban, Karnataka, India</span>
             </p>
 
@@ -417,7 +422,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-4 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>View Projects</span>
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight size={16} className="w-4 h-4 shrink-0" />
               </a>
 
               <a
@@ -427,7 +432,7 @@ export default function Home() {
                 download="Akshaya_B_Resume.pdf"
                 className="inline-flex items-center gap-2.5 bg-white/5 hover:bg-white/10 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-4 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 hover:-translate-y-0.5"
               >
-                <Download className="w-4 h-4 text-cyan-400" />
+                <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                 <span>Download Resume</span>
               </a>
             </div>
@@ -440,7 +445,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
               >
-                <GithubIcon className="w-4 h-4 text-slate-300 group-hover:text-cyan-400 transition" />
+                <GithubIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>GitHub</span>
               </a>
               <span className="text-slate-700">•</span>
@@ -450,7 +455,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
               >
-                <LinkedinIcon className="w-4 h-4 text-slate-300 group-hover:text-cyan-400 transition" />
+                <LinkedinIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>LinkedIn</span>
               </a>
               <span className="text-slate-700">•</span>
@@ -458,7 +463,7 @@ export default function Home() {
                 href={`mailto:${email}`}
                 className="inline-flex items-center gap-2 hover:text-cyan-400 transition group"
               >
-                <Mail className="w-4 h-4 text-slate-300 group-hover:text-cyan-400 transition" />
+                <Mail size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>Email</span>
               </a>
             </div>
@@ -493,7 +498,7 @@ export default function Home() {
       <section id="about" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-            <GraduationCap className="w-4 h-4" />
+            <GraduationCap size={16} className="w-4 h-4 shrink-0" />
             <span>About Me</span>
           </div>
 
@@ -514,7 +519,7 @@ export default function Home() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                  <Layers className="w-5 h-5" />
+                  <Layers size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-lg">Front-End Focus</h3>
                 <p className="text-cyan-400 text-sm mt-1">React &amp; Responsive UI</p>
@@ -525,7 +530,7 @@ export default function Home() {
 
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-purple-500/40 transition">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
-                  <Cpu className="w-5 h-5" />
+                  <Cpu size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-lg">AI &amp; Multi-Agent</h3>
                 <p className="text-purple-400 text-sm mt-1">LLMs &amp; Gemini AI</p>
@@ -536,7 +541,7 @@ export default function Home() {
 
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-emerald-500/40 transition">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
-                  <ShieldCheck className="w-5 h-5" />
+                  <ShieldCheck size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-lg">Systems &amp; Security</h3>
                 <p className="text-emerald-400 text-sm mt-1">SSL/TLS &amp; Sockets</p>
@@ -547,7 +552,7 @@ export default function Home() {
 
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-amber-500/40 transition">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
-                  <Network className="w-5 h-5" />
+                  <Network size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-lg">Networking &amp; SDN</h3>
                 <p className="text-amber-400 text-sm mt-1">Ryu &amp; OpenFlow</p>
@@ -565,7 +570,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-              <Briefcase className="w-4 h-4" />
+              <Briefcase size={16} className="w-4 h-4 shrink-0" />
               <span>Career Journey</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -634,7 +639,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-              <FolderGit2 className="w-4 h-4" />
+              <FolderGit2 size={16} className="w-4 h-4 shrink-0" />
               <span>Engineered Works</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -666,7 +671,7 @@ export default function Home() {
                       aria-label={`View ${project.title} on GitHub`}
                       className="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-slate-800 hover:border-cyan-400/50 transition shrink-0"
                     >
-                      <GithubIcon className="w-4 h-4" />
+                      <GithubIcon size={16} className="w-4 h-4 shrink-0" />
                     </a>
                   </div>
 
@@ -714,7 +719,7 @@ export default function Home() {
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition group/link"
                   >
                     <span>View Repository</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight size={14} className="w-3.5 h-3.5 shrink-0 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -728,7 +733,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-              <Code2 className="w-4 h-4" />
+              <Code2 size={16} className="w-4 h-4 shrink-0" />
               <span>Technical Arsenal</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -777,7 +782,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-              <BookOpen className="w-4 h-4" />
+              <BookOpen size={16} className="w-4 h-4 shrink-0" />
               <span>Academic Background</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -799,7 +804,7 @@ export default function Home() {
                     <span className="text-xs font-semibold text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                       {edu.period}
                     </span>
-                    <GraduationCap className="w-4 h-4 text-slate-400" />
+                    <GraduationCap size={16} className="w-4 h-4 shrink-0 text-slate-400" />
                   </div>
 
                   <h3 className="text-lg font-bold text-white mb-2 leading-snug">
@@ -823,7 +828,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-              <Calendar className="w-4 h-4" />
+              <Calendar size={16} className="w-4 h-4 shrink-0" />
               <span>Real-World Impact</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -920,7 +925,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-purple-400 hover:text-purple-300 transition"
                 >
                   <span>Read Medium Architecture Breakdown</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight size={16} className="w-4 h-4 shrink-0" />
                 </a>
               </div>
             </div>
@@ -961,7 +966,7 @@ export default function Home() {
       <section id="contact" className="py-24 sm:py-32 px-6 sm:px-8 relative border-t border-slate-800/60">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
-            <Mail className="w-4 h-4" />
+            <Mail size={16} className="w-4 h-4 shrink-0" />
             <span>Get In Touch</span>
           </div>
 
@@ -978,7 +983,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-black/60 border border-slate-800 mb-8">
               <div className="flex items-center gap-3 text-left">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-                  <Mail className="w-5 h-5" />
+                  <Mail size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Direct Email</p>
@@ -994,12 +999,12 @@ export default function Home() {
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
+                    <Check size={16} className="w-4 h-4 shrink-0 text-emerald-400" />
                     <span className="text-emerald-400">Copied!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-4 h-4" />
+                    <Copy size={16} className="w-4 h-4 shrink-0" />
                     <span>Copy</span>
                   </>
                 )}
@@ -1012,7 +1017,7 @@ export default function Home() {
                 href={`mailto:${email}`}
                 className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition shadow-[0_0_25px_rgba(34,211,238,0.3)] hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Mail className="w-4 h-4" />
+                <Mail size={18} className="w-4.5 h-4.5 shrink-0" />
                 <span>Send Email</span>
               </a>
 
@@ -1022,7 +1027,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
               >
-                <LinkedinIcon className="w-4 h-4 text-cyan-400" />
+                <LinkedinIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>LinkedIn</span>
               </a>
 
@@ -1032,7 +1037,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
               >
-                <GithubIcon className="w-4 h-4 text-cyan-400" />
+                <GithubIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>GitHub</span>
               </a>
             </div>
