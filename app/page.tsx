@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
   ArrowUpRight,
@@ -97,38 +98,40 @@ export default function Home() {
     {
       title: "Languages",
       icon: <Code2 size={20} className="w-5 h-5 shrink-0 text-cyan-400" />,
-      borderColor: "border-slate-800 hover:border-cyan-500/40",
+      borderColor: "border-slate-800/80 hover:border-cyan-500/50",
       skills: ["C", "C++", "Python", "JavaScript", "TypeScript"],
     },
     {
       title: "Frontend Development",
       icon: <Layers size={20} className="w-5 h-5 shrink-0 text-blue-400" />,
-      borderColor: "border-slate-800 hover:border-blue-500/40",
+      borderColor: "border-slate-800/80 hover:border-blue-500/50",
       skills: ["HTML", "CSS", "React.js", "Responsive Web Design"],
     },
     {
       title: "Backend & APIs",
       icon: <Terminal size={20} className="w-5 h-5 shrink-0 text-violet-400" />,
-      borderColor: "border-slate-800 hover:border-violet-500/40",
+      borderColor: "border-slate-800/80 hover:border-violet-500/50",
       skills: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
     },
     {
-      title: "AI / ML",
+      title: "AI / ML & Cloud",
       icon: <Cpu size={20} className="w-5 h-5 shrink-0 text-emerald-400" />,
-      borderColor: "border-slate-800 hover:border-emerald-500/40",
-      skills: ["Gemini AI", "AI Agents", "Multi-Agent Systems"],
-    },
-    {
-      title: "Databases & Cloud",
-      icon: <Cloud size={20} className="w-5 h-5 shrink-0 text-sky-400" />,
-      borderColor: "border-slate-800 hover:border-sky-500/40",
-      skills: ["MongoDB", "Firebase", "Google Cloud Run", "Netlify", "Vercel"],
-    },
-    {
-      title: "Networking & Security",
-      icon: <Network size={20} className="w-5 h-5 shrink-0 text-pink-400" />,
-      borderColor: "border-slate-800 hover:border-pink-500/40",
+      borderColor: "border-slate-800/80 hover:border-emerald-500/50",
       skills: [
+        "Gemini AI",
+        "Multi-Agent Systems",
+        "Google Cloud Run",
+        "Netlify",
+        "Vercel",
+      ],
+    },
+    {
+      title: "Databases & Networking",
+      icon: <Network size={20} className="w-5 h-5 shrink-0 text-pink-400" />,
+      borderColor: "border-slate-800/80 hover:border-pink-500/50",
+      skills: [
+        "MongoDB",
+        "Firebase",
         "TCP/IP",
         "Socket Programming",
         "SSL/TLS",
@@ -139,7 +142,7 @@ export default function Home() {
     {
       title: "Tools & Environments",
       icon: <Wrench size={20} className="w-5 h-5 shrink-0 text-amber-400" />,
-      borderColor: "border-slate-800 hover:border-amber-500/40",
+      borderColor: "border-slate-800/80 hover:border-amber-500/50",
       skills: ["Git", "GitHub", "VS Code", "Linux"],
     },
   ];
@@ -151,16 +154,15 @@ export default function Home() {
       type: "Team Project • Feb 2026 – Mar 2026",
       category: "Generative AI • Student OS",
       description:
-        "Built an AI-powered student productivity platform with task scheduling, smart calendar, auto-rescheduling, habit tracking, and study planning.",
+        "AI-powered student productivity platform with task scheduling, smart calendar, auto-rescheduling, habit tracking, and study planning.",
       bullets: [
         "Developed backend APIs using Node.js and Express and integrated Gemini AI to generate personalized study plans from syllabus input.",
         "Collaborated in a team using Git and a structured branching workflow.",
       ],
       tags: ["TypeScript", "React", "Node.js", "Express", "Gemini AI", "Firebase"],
       github: "https://github.com/Akshayshetty742/nexus-ai-os",
-      gradient: "from-cyan-500/10 via-blue-500/5 to-transparent",
       badgeColor: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
-      glowColor: "group-hover:border-cyan-500/40",
+      glowColor: "group-hover:border-cyan-500/50",
     },
     {
       id: "multi-agent-assistant",
@@ -168,16 +170,15 @@ export default function Home() {
       type: "Personal Project",
       category: "Multi-Agent Systems • Conversational AI",
       description:
-        "Developed a full-stack conversational assistant for managing tasks, notes, and events through natural-language commands.",
+        "Full-stack conversational assistant managing tasks, notes, and events via natural-language commands using specialized agents.",
       bullets: [
         "Implemented specialized Task, Notes, and Event agents with a React frontend and FastAPI backend; built REST APIs and deployed on Google Cloud Run.",
         "Implemented interactive UI with dark/light mode and real-time response handling.",
       ],
       tags: ["React", "FastAPI", "REST APIs", "Google Cloud Run", "Python"],
       github: "https://github.com/Akshayshetty742/multi-agent-assistant",
-      gradient: "from-purple-500/10 via-indigo-500/5 to-transparent",
       badgeColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
-      glowColor: "group-hover:border-purple-500/40",
+      glowColor: "group-hover:border-purple-500/50",
     },
     {
       id: "leaderboard-system",
@@ -192,9 +193,8 @@ export default function Home() {
       ],
       tags: ["Python", "Socket Programming", "SSL/TLS", "Multithreading"],
       github: "https://github.com/Akshayshetty742/CN-Jackfruit-Project-distributed-leaderboard-system",
-      gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
       badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
-      glowColor: "group-hover:border-amber-500/40",
+      glowColor: "group-hover:border-amber-500/50",
     },
     {
       id: "sdn-firewall",
@@ -209,9 +209,8 @@ export default function Home() {
       ],
       tags: ["Python", "Ryu Controller", "Mininet", "OpenFlow"],
       github: "https://github.com/Akshayshetty742/sdn-firewall-ryu",
-      gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
       badgeColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-      glowColor: "group-hover:border-emerald-500/40",
+      glowColor: "group-hover:border-emerald-500/50",
     },
     {
       id: "journeyhub",
@@ -219,33 +218,31 @@ export default function Home() {
       type: "Personal Project • May 2025 – Aug 2025",
       category: "Full Stack • Travel Platform",
       description:
-        "Developed a responsive travel booking platform with interactive UI for browsing travel packages and pricing.",
+        "Responsive travel booking platform featuring interactive UI components, backend APIs, and integrated booking services.",
       bullets: [
         "Built backend services using Node.js and Express and integrated third-party APIs for booking and payments.",
         "Deployed the application using Netlify and managed development using Git and GitHub.",
       ],
       tags: ["React", "Node.js", "Express", "Netlify", "HTML/CSS"],
-      github: "https://github.com/Akshayshetty742/TravelVista_React_Project",
-      gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
+      github: "https://github.com/Akshayshetty742/TravelVista",
       badgeColor: "text-pink-400 border-pink-500/30 bg-pink-500/10",
-      glowColor: "group-hover:border-pink-500/40",
+      glowColor: "group-hover:border-pink-500/50",
     },
     {
       id: "pes-vcs",
-      title: "PES Version Control System (VCS)",
+      title: "PES Version Control System in C",
       type: "Systems Programming Project",
       category: "Systems Programming • Custom VCS",
       description:
-        "Implemented a lightweight version control system in C, inspired by Git.",
+        "Lightweight version control system built in C, featuring staging, committing, branching, log history, and checkout using custom data structures.",
       bullets: [
         "Developed features for repository initialization, staging, committing, branching, log history, and checkout.",
         "Used custom data structures, file handling, and object storage for efficient version management.",
       ],
       tags: ["C", "File Systems", "Custom Data Structures"],
       github: "https://github.com/Akshayshetty742/PES1UG24AAM026pes-vcs",
-      gradient: "from-blue-500/10 via-indigo-500/5 to-transparent",
       badgeColor: "text-blue-400 border-blue-500/30 bg-blue-500/10",
-      glowColor: "group-hover:border-blue-500/40",
+      glowColor: "group-hover:border-blue-500/50",
     },
   ];
 
@@ -272,7 +269,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-[#050505] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden font-sans">
-      {/* Background Ambient Glows */}
+      {/* Dynamic Background Radial Glows & Orbs */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] lg:w-[900px] h-[340px] sm:h-[500px] bg-cyan-500/15 blur-[120px] sm:blur-[160px] rounded-full" />
         <div className="absolute top-[25%] -left-32 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-purple-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
@@ -287,9 +284,12 @@ export default function Home() {
             href="#"
             className="group flex items-center gap-2.5 text-lg sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:scale-105 transition shrink-0 text-sm sm:text-base">
+            <motion.div
+              whileHover={{ rotate: 10, scale: 1.05 }}
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold shadow-[0_0_20px_rgba(34,211,238,0.35)] transition shrink-0 text-sm sm:text-base"
+            >
               A
-            </div>
+            </motion.div>
             <span>
               Akshaya <span className="text-cyan-400">B</span>
             </span>
@@ -310,29 +310,33 @@ export default function Home() {
 
           {/* Desktop Actions */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.96 }}
               href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               download="Akshaya_B_Resume.pdf"
-              className="inline-flex items-center justify-center min-h-[44px] gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 border border-slate-800 hover:border-cyan-400/50 hover:bg-white/10 transition duration-200"
+              className="inline-flex items-center justify-center min-h-[44px] gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900/60 backdrop-blur-md border border-slate-800 hover:border-cyan-400/50 hover:bg-slate-800/60 transition duration-200"
             >
               <Download size={14} className="w-3.5 h-3.5 shrink-0 text-cyan-400" />
               <span>Resume</span>
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.96 }}
               href="#contact"
               className="inline-flex items-center justify-center min-h-[44px] gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-black bg-cyan-400 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-200"
             >
               Let&apos;s Connect
-            </a>
+            </motion.a>
           </div>
 
-          {/* Mobile Hamburger Button (44px min touch target) */}
+          {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-white/5 border border-slate-800 text-slate-300 hover:text-white hover:bg-white/10 transition active:scale-95"
+            className="flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800/60 transition active:scale-95"
           >
             {mobileMenuOpen ? (
               <X size={22} className="w-5.5 h-5.5 shrink-0" />
@@ -342,56 +346,74 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Dropdown Nav Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-b border-slate-800 bg-black/95 backdrop-blur-2xl px-4 py-5 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col space-y-1">
-              {navLinks.map((link) => (
+        {/* Framer Motion Animated Mobile Dropdown Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="md:hidden border-b border-slate-800 bg-black/95 backdrop-blur-2xl px-4 py-5 space-y-4 overflow-hidden"
+            >
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between min-h-[44px] px-3.5 py-2.5 rounded-xl text-slate-200 hover:bg-white/5 hover:text-cyan-400 text-sm font-medium transition"
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight size={14} className="text-slate-500" />
+                  </a>
+                ))}
+              </div>
+              <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
                 <a
-                  key={link.name}
-                  href={link.href}
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Akshaya_B_Resume.pdf"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between min-h-[44px] px-3.5 py-2.5 rounded-xl text-slate-200 hover:bg-white/5 hover:text-cyan-400 text-sm font-medium transition"
+                  className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-white hover:border-cyan-400/50 transition active:scale-[0.98]"
                 >
-                  <span>{link.name}</span>
-                  <ChevronRight size={14} className="text-slate-500" />
+                  <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
+                  <span>Download Resume</span>
                 </a>
-              ))}
-            </div>
-            <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
-              <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Akshaya_B_Resume.pdf"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-white/5 border border-slate-800 text-white hover:border-cyan-400/50 transition active:scale-[0.98]"
-              >
-                <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
-                <span>Download Resume</span>
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition active:scale-[0.98]"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        )}
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition active:scale-[0.98]"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero Section */}
       <section className="relative z-10 py-12 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex items-center justify-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
             {/* Title / Role Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(34,211,238,0.15)] max-w-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(34,211,238,0.15)] max-w-full backdrop-blur-md"
+            >
               <Sparkles size={14} className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">AI • FRONTEND • CREATOR</span>
-            </div>
+            </motion.div>
 
             {/* Main Name Heading */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.1]">
@@ -406,79 +428,92 @@ export default function Home() {
               CSE (AI &amp; ML) Student at PES University
             </h2>
 
-            {/* Location & Summary from Resume */}
+            {/* Location */}
             <p className="mt-2 text-xs sm:text-sm text-cyan-400/90 font-mono flex items-center justify-center lg:justify-start gap-1.5">
               <MapPin size={14} className="w-3.5 h-3.5 shrink-0" />
               <span>Bangalore Urban, Karnataka, India</span>
             </p>
 
+            {/* Exact Resume Bio */}
             <p className="mt-5 sm:mt-6 text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
-              Aspiring Front-End Developer and CSE (AI &amp; ML) student at PES University with hands-on experience building full-stack web applications, AI-powered productivity tools, networking systems, and software projects. Experienced with React.js, JavaScript, Python, Node.js, FastAPI, databases, Git/GitHub, and cloud deployment.
+              CSE (AI &amp; ML) Student at PES University | Aspiring Front-End Developer with hands-on experience building full-stack web applications, AI-powered productivity tools, networking systems, and software projects. Experienced with React.js, JavaScript, Python, Node.js, FastAPI, databases, Git/GitHub, and cloud deployment.
             </p>
 
-            {/* Hero CTAs (responsive touch targets) */}
+            {/* Hero CTAs */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-5 w-full sm:w-auto">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="#projects"
-                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:-translate-y-0.5 active:translate-y-0 text-center"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] text-center"
               >
                 <span>View Projects</span>
                 <ChevronRight size={16} className="w-4 h-4 shrink-0" />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Akshaya_B_Resume.pdf"
-                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-white/5 hover:bg-white/10 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-3.5 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 hover:-translate-y-0.5 active:translate-y-0 text-center"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-slate-900/60 hover:bg-slate-800/80 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-3.5 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 text-center"
               >
                 <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                 <span>Download Resume</span>
-              </a>
+              </motion.a>
             </div>
 
-            {/* Social Badges */}
+            {/* Social Badges with Explicit 20px / w-5 h-5 Icons */}
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5 text-sm text-slate-400 w-full">
-              <a
+              <motion.a
+                whileHover={{ y: -2 }}
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
-                <GithubIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
+                <GithubIcon size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
               <span className="text-slate-700 hidden sm:inline">•</span>
-              <a
+              <motion.a
+                whileHover={{ y: -2 }}
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
-                <LinkedinIcon size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
+                <LinkedinIcon size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>LinkedIn</span>
-              </a>
+              </motion.a>
               <span className="text-slate-700 hidden sm:inline">•</span>
-              <a
+              <motion.a
+                whileHover={{ y: -2 }}
                 href={`mailto:${email}`}
                 className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
               >
-                <Mail size={16} className="w-4 h-4 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
+                <Mail size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>Email</span>
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Hero Image Card (Responsive sizing & no caption below) */}
-          <div className="lg:col-span-5 flex justify-center w-full">
+          {/* Right Hero Image Card (No caption below) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 flex justify-center w-full"
+          >
             <div className="relative group w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px]">
               {/* Glowing Aura Ring */}
               <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/25 via-blue-500/20 to-purple-600/25 rounded-3xl blur-xl sm:blur-2xl opacity-75 group-hover:opacity-100 transition duration-500" />
 
-              {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-800 group-hover:border-cyan-500/40 bg-black/60 backdrop-blur-sm p-2.5 sm:p-3 shadow-2xl transition duration-500">
-                <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-900">
+              {/* Glassmorphic Image Frame */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-800/80 group-hover:border-cyan-500/40 bg-slate-900/60 backdrop-blur-md p-2.5 sm:p-3 shadow-2xl transition duration-500">
+                <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-950">
                   <Image
                     src="/akshay.jpeg"
                     alt="Akshaya B"
@@ -491,12 +526,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 max-w-6xl mx-auto w-full">
+      <motion.section
+        id="about"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 max-w-6xl mx-auto w-full"
+      >
         <div>
           <div className="flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
             <GraduationCap size={16} className="w-4 h-4 shrink-0" />
@@ -516,9 +558,12 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Pillars Grid */}
+            {/* Glassmorphic Pillars Grid */}
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300"
+              >
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3.5">
                   <Layers size={20} className="w-5 h-5 shrink-0" />
                 </div>
@@ -527,9 +572,12 @@ export default function Home() {
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Crafting clean, accessible, and high-performance component architectures.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-purple-500/40 transition">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-purple-500/50 transition-all duration-300"
+              >
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3.5">
                   <Cpu size={20} className="w-5 h-5 shrink-0" />
                 </div>
@@ -538,9 +586,12 @@ export default function Home() {
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Integrating intelligent workflows and multi-agent coordination systems.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-emerald-500/40 transition">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300"
+              >
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3.5">
                   <ShieldCheck size={20} className="w-5 h-5 shrink-0" />
                 </div>
@@ -549,9 +600,12 @@ export default function Home() {
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Building concurrent client-server systems handling ~6,500 req/sec.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.02] border border-slate-800 hover:border-amber-500/40 transition">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-amber-500/50 transition-all duration-300"
+              >
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3.5">
                   <Network size={20} className="w-5 h-5 shrink-0" />
                 </div>
@@ -560,14 +614,21 @@ export default function Home() {
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Implementing dynamic firewall filtering on simulated network topologies.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
+      <motion.section
+        id="experience"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
@@ -586,7 +647,10 @@ export default function Home() {
             <div className="relative pl-5 sm:pl-8 border-l-2 border-cyan-500/30 py-1">
               <div className="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_#22d3ee]" />
 
-              <div className="p-5 sm:p-8 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 backdrop-blur-sm">
+              <motion.div
+                whileHover={{ y: -3 }}
+                className="p-5 sm:p-8 rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300"
+              >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-800/80">
                   <div>
                     <h3 className="text-lg sm:text-2xl font-bold text-white leading-snug">
@@ -623,20 +687,27 @@ export default function Home() {
                 </ul>
 
                 <div className="mt-5 sm:mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-2">
-                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">React.js</span>
-                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">HTML5 / CSS3</span>
-                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">JavaScript</span>
-                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Responsive Design</span>
-                  <span className="px-2.5 py-1 rounded-lg text-xs bg-white/5 text-slate-300 border border-slate-800">Git &amp; GitHub</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-slate-800/50 text-slate-300 border border-slate-700/60">React.js</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-slate-800/50 text-slate-300 border border-slate-700/60">HTML5 / CSS3</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-slate-800/50 text-slate-300 border border-slate-700/60">JavaScript</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-slate-800/50 text-slate-300 border border-slate-700/60">Responsive Design</span>
+                  <span className="px-2.5 py-1 rounded-lg text-xs bg-slate-800/50 text-slate-300 border border-slate-700/60">Git &amp; GitHub</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
+      <motion.section
+        id="projects"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
@@ -651,12 +722,13 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Project Grid */}
+          {/* Glassmorphic Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {projects.map((project) => (
-              <div
+              <motion.div
                 key={project.id}
-                className={`group relative rounded-3xl bg-gradient-to-b ${project.gradient} border border-slate-800 ${project.glowColor} p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl`}
+                whileHover={{ y: -5, scale: 1.01 }}
+                className={`group relative rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 ${project.glowColor} p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
@@ -665,7 +737,9 @@ export default function Home() {
                     >
                       {project.category}
                     </span>
-                    <a
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -673,7 +747,7 @@ export default function Home() {
                       className="min-h-[38px] min-w-[38px] flex items-center justify-center p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-slate-800 hover:border-cyan-400/50 transition shrink-0"
                     >
                       <GithubIcon size={16} className="w-4 h-4 shrink-0" />
-                    </a>
+                    </motion.a>
                   </div>
 
                   <p className="text-[11px] font-medium text-slate-400 mb-1.5">
@@ -705,14 +779,14 @@ export default function Home() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-black/50 border border-slate-800 text-slate-300"
+                        className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-black/60 border border-slate-800 text-slate-300"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  {/* GitHub Action Button (min 44px tap target) */}
+                  {/* GitHub Action Button */}
                   <a
                     href={project.github}
                     target="_blank"
@@ -723,14 +797,21 @@ export default function Home() {
                     <ArrowUpRight size={14} className="w-3.5 h-3.5 shrink-0 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
+      <motion.section
+        id="skills"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
@@ -745,12 +826,13 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Categorized Skill Cards */}
+          {/* Categorized Glassmorphic Skill Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((category) => (
-              <div
+              <motion.div
                 key={category.title}
-                className={`p-5 sm:p-7 rounded-3xl bg-white/[0.02] border ${category.borderColor} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between`}
+                whileHover={{ y: -5, scale: 1.01 }}
+                className={`p-5 sm:p-7 rounded-3xl backdrop-blur-md bg-slate-900/50 border ${category.borderColor} transition-all duration-300 flex flex-col justify-between shadow-lg`}
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-800/80">
@@ -765,21 +847,28 @@ export default function Home() {
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1.5 rounded-xl text-xs font-medium bg-white/[0.04] border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:bg-cyan-500/10 transition duration-200"
+                        className="px-3 py-1.5 rounded-xl text-xs font-medium bg-slate-800/50 border border-slate-700/60 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:bg-cyan-500/10 transition duration-200"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Education Section */}
-      <section id="education" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
+      <motion.section
+        id="education"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
@@ -796,9 +885,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {education.map((edu, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="p-5 sm:p-7 rounded-3xl bg-white/[0.02] border border-slate-800 hover:border-cyan-500/40 transition duration-300 flex flex-col justify-between"
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="p-5 sm:p-7 rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300 flex flex-col justify-between shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3.5">
@@ -818,14 +908,21 @@ export default function Home() {
                     {edu.details}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Events & Hackathons Showcase */}
-      <section id="events" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full">
+      <motion.section
+        id="events"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
@@ -842,7 +939,10 @@ export default function Home() {
 
           <div className="space-y-8 sm:space-y-12">
             {/* Event 1 - Dreamflow */}
-            <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-cyan-500/40 transition">
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 overflow-hidden hover:border-cyan-500/50 transition shadow-xl"
+            >
               <div className="relative w-full h-[200px] sm:h-[320px] md:h-[420px]">
                 <Image
                   src="/dreamflow-event.png"
@@ -866,10 +966,13 @@ export default function Home() {
                   Collaborated intensively to design, architect, and ship a fully functional web application prototype during Dreamflow Buildathon 2025.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Event 2 - Google Cloud Gen AI Academy */}
-            <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-purple-500/40 transition">
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 overflow-hidden hover:border-purple-500/50 transition shadow-xl"
+            >
               <div className="relative w-full h-[200px] sm:h-[320px] md:h-[420px]">
                 <Image
                   src="/event2.png"
@@ -893,10 +996,13 @@ export default function Home() {
                   Engineered multi-agent AI workflows and scaled Nexus AI using Google Cloud generative AI infrastructure, prompt orchestration, and intelligent agent pipelines.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Event 3 - Nexus AI Presentation */}
-            <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-cyan-500/40 transition">
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 overflow-hidden hover:border-cyan-500/50 transition shadow-xl"
+            >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-black/80 p-2">
                 <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
                   <Image src="/event3-1.png" alt="Nexus AI Showcase 1" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
@@ -931,10 +1037,13 @@ export default function Home() {
                   <ArrowUpRight size={16} className="w-4 h-4 shrink-0" />
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Event 4 - LaunchED Internship */}
-            <div className="rounded-3xl bg-white/[0.02] border border-slate-800 overflow-hidden hover:border-amber-500/40 transition">
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 overflow-hidden hover:border-amber-500/50 transition shadow-xl"
+            >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-black/80 p-2">
                 <div className="relative h-[180px] sm:h-[240px] md:h-[280px] rounded-xl overflow-hidden">
                   <Image src="/event4-1.png" alt="LaunchED 1" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
@@ -960,13 +1069,20 @@ export default function Home() {
                   Successfully completed comprehensive frontend training covering responsive web architectures, React.js ecosystem patterns, component lifecycle management, and production workflows.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full">
+      <motion.section
+        id="contact"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4">
             <Mail size={16} className="w-4 h-4 shrink-0" />
@@ -982,7 +1098,7 @@ export default function Home() {
           </p>
 
           {/* Quick Contact Card */}
-          <div className="p-5 sm:p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-slate-800 backdrop-blur-xl max-w-2xl mx-auto w-full">
+          <div className="p-5 sm:p-8 md:p-10 rounded-3xl backdrop-blur-xl bg-slate-900/50 border border-slate-800/80 max-w-2xl mx-auto w-full shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-black/60 border border-slate-800 mb-6 sm:mb-8 w-full">
               <div className="flex items-center gap-3 text-left w-full sm:w-auto">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
@@ -996,9 +1112,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <button
+              <motion.button
+                whileTap={{ scale: 0.95 }}
                 onClick={handleCopyEmail}
-                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/15 border border-slate-800 text-slate-200 hover:text-white transition cursor-pointer active:scale-95 shrink-0"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/15 border border-slate-800 text-slate-200 hover:text-white transition cursor-pointer shrink-0"
               >
                 {copiedEmail ? (
                   <>
@@ -1011,42 +1128,48 @@ export default function Home() {
                     <span>Copy Email</span>
                   </>
                 )}
-              </button>
+              </motion.button>
             </div>
 
-            {/* Social Connection Buttons (min 48px touch targets) */}
+            {/* Social Connection Buttons with Explicit Links and 20px Icons */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href={`mailto:${email}`}
-                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition shadow-[0_0_25px_rgba(34,211,238,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold text-sm transition shadow-[0_0_25px_rgba(34,211,238,0.3)]"
               >
                 <Mail size={18} className="w-4.5 h-4.5 shrink-0" />
                 <span>Send Email</span>
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition"
               >
                 <LinkedinIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>LinkedIn</span>
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center justify-center min-h-[48px] gap-2.5 px-5 py-3.5 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 text-white text-sm font-semibold transition"
               >
                 <GithubIcon size={18} className="w-4.5 h-4.5 shrink-0 text-cyan-400" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-black/80 w-full">
