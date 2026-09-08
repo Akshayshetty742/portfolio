@@ -25,9 +25,9 @@ import {
   Network,
   ShieldCheck,
   Wrench,
-  Cloud,
   MapPin,
   BookOpen,
+  Award,
 } from "lucide-react";
 
 function GithubIcon({ className = "w-5 h-5 shrink-0", size = 20 }: { className?: string; size?: number }) {
@@ -89,6 +89,7 @@ export default function Home() {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Certificates", href: "#certificates" },
     { name: "Education", href: "#education" },
     { name: "Events", href: "#events" },
     { name: "Contact", href: "#contact" },
@@ -96,54 +97,40 @@ export default function Home() {
 
   const skillCategories = [
     {
-      title: "Languages",
-      icon: <Code2 size={20} className="w-5 h-5 shrink-0 text-cyan-400" />,
+      title: "AI / Machine Learning",
+      icon: <Cpu size={20} className="w-5 h-5 shrink-0 text-cyan-400" />,
       borderColor: "border-slate-800/80 hover:border-cyan-500/50",
+      skills: ["Gemini AI", "Multi-Agent Systems", "Google Cloud Run", "LLM Workflows", "Prompt Orchestration"],
+    },
+    {
+      title: "Programming",
+      icon: <Code2 size={20} className="w-5 h-5 shrink-0 text-violet-400" />,
+      borderColor: "border-slate-800/80 hover:border-violet-500/50",
       skills: ["C", "C++", "Python", "JavaScript", "TypeScript"],
     },
     {
       title: "Frontend Development",
       icon: <Layers size={20} className="w-5 h-5 shrink-0 text-blue-400" />,
       borderColor: "border-slate-800/80 hover:border-blue-500/50",
-      skills: ["HTML", "CSS", "React.js", "Responsive Web Design"],
+      skills: ["HTML", "CSS", "React.js", "Responsive Web Design", "Next.js"],
     },
     {
-      title: "Backend & APIs",
-      icon: <Terminal size={20} className="w-5 h-5 shrink-0 text-violet-400" />,
-      borderColor: "border-slate-800/80 hover:border-violet-500/50",
-      skills: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
-    },
-    {
-      title: "AI / ML & Cloud",
-      icon: <Cpu size={20} className="w-5 h-5 shrink-0 text-emerald-400" />,
+      title: "Backend & Systems",
+      icon: <Terminal size={20} className="w-5 h-5 shrink-0 text-emerald-400" />,
       borderColor: "border-slate-800/80 hover:border-emerald-500/50",
-      skills: [
-        "Gemini AI",
-        "Multi-Agent Systems",
-        "Google Cloud Run",
-        "Netlify",
-        "Vercel",
-      ],
+      skills: ["Node.js", "Express.js", "FastAPI", "REST APIs", "Socket Programming", "SSL/TLS"],
     },
     {
-      title: "Databases & Networking",
+      title: "Networking & Cloud",
       icon: <Network size={20} className="w-5 h-5 shrink-0 text-pink-400" />,
       borderColor: "border-slate-800/80 hover:border-pink-500/50",
-      skills: [
-        "MongoDB",
-        "Firebase",
-        "TCP/IP",
-        "Socket Programming",
-        "SSL/TLS",
-        "OpenFlow",
-        "Mininet",
-      ],
+      skills: ["OpenFlow", "Ryu Controller", "Mininet", "TCP/IP", "Vercel", "Netlify"],
     },
     {
-      title: "Tools & Environments",
+      title: "Tools / Technologies",
       icon: <Wrench size={20} className="w-5 h-5 shrink-0 text-amber-400" />,
       borderColor: "border-slate-800/80 hover:border-amber-500/50",
-      skills: ["Git", "GitHub", "VS Code", "Linux"],
+      skills: ["Git", "GitHub", "VS Code", "Linux", "MongoDB", "Firebase"],
     },
   ];
 
@@ -246,12 +233,39 @@ export default function Home() {
     },
   ];
 
+  const certificates = [
+    {
+      title: "Front-End Development Certification",
+      issuer: "PESU I/O",
+      date: "2025",
+      description: "Intensive 4-week bootcamp covering React.js, HTML5, CSS3, JavaScript, responsive web architecture, and production Git workflows.",
+      badge: "Bootcamp Graduate",
+      badgeColor: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
+    },
+    {
+      title: "Google Cloud Gen AI Academy APAC 2026",
+      issuer: "Google Cloud",
+      date: "2026",
+      description: "Specialized training on generative AI infrastructure, multi-agent orchestrations, Gemini AI pipelines, and cloud scaling.",
+      badge: "APAC Cohort",
+      badgeColor: "text-purple-400 border-purple-500/30 bg-purple-500/10",
+    },
+    {
+      title: "Web Development Mentorship Program",
+      issuer: "LaunchED Global",
+      date: "2025",
+      description: "Mentorship program on modern web development practices, component lifecycle management, React patterns, and production engineering.",
+      badge: "Mentorship",
+      badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
+    },
+  ];
+
   const education = [
     {
       degree: "B.Tech, Artificial Intelligence and Machine Learning",
       institution: "PES University",
       period: "Sep 2024 – Sep 2028",
-      details: "Specializing in AI & Machine Learning, Full-Stack Development, Distributed Systems, and Networking.",
+      details: "Specializing in AI & Machine Learning, Full-Stack Development, Distributed Systems, and Computer Networking.",
     },
     {
       degree: "PUC 1st and 2nd Year (Grade: 11–12)",
@@ -269,12 +283,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-[#050505] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden font-sans">
-      {/* Dynamic Background Radial Glows & Orbs */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] lg:w-[900px] h-[340px] sm:h-[500px] bg-cyan-500/15 blur-[120px] sm:blur-[160px] rounded-full" />
-        <div className="absolute top-[25%] -left-32 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-purple-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
-        <div className="absolute top-[55%] -right-32 w-[300px] sm:w-[550px] h-[300px] sm:h-[550px] bg-blue-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] sm:w-[700px] h-[250px] sm:h-[400px] bg-cyan-600/10 blur-[130px] sm:blur-[170px] rounded-full" />
+      {/* Background Lighting Orbs */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden max-w-full">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] lg:w-[900px] h-[320px] sm:h-[500px] bg-cyan-500/15 blur-[120px] sm:blur-[160px] rounded-full" />
+        <div className="absolute top-[25%] -left-32 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-purple-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
+        <div className="absolute top-[55%] -right-32 w-[280px] sm:w-[550px] h-[280px] sm:h-[550px] bg-blue-600/10 blur-[140px] sm:blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] sm:w-[700px] h-[240px] sm:h-[400px] bg-cyan-600/10 blur-[130px] sm:blur-[170px] rounded-full" />
       </div>
 
       {/* Sticky Header Navigation */}
@@ -282,7 +296,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           <Link
             href="#"
-            className="group flex items-center gap-2.5 text-lg sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
+            className="group flex items-center gap-2.5 text-base sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
           >
             <motion.div
               whileHover={{ rotate: 10, scale: 1.05 }}
@@ -290,18 +304,18 @@ export default function Home() {
             >
               A
             </motion.div>
-            <span>
+            <span className="truncate">
               Akshaya <span className="text-cyan-400">B</span>
             </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-300">
+          <nav className="hidden lg:flex items-center gap-5 lg:gap-7 text-xs lg:text-sm font-medium text-slate-300">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="hover:text-cyan-400 transition-colors duration-200 py-1.5"
+                className="hover:text-cyan-400 transition-colors duration-200 py-1.5 focus-visible:ring-1 focus-visible:ring-cyan-400"
               >
                 {link.name}
               </a>
@@ -335,48 +349,50 @@ export default function Home() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation menu"
-            className="flex md:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800/60 transition active:scale-95"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            className="flex lg:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 transition active:scale-95 cursor-pointer shrink-0"
           >
             {mobileMenuOpen ? (
-              <X size={22} className="w-5.5 h-5.5 shrink-0" />
+              <X size={22} className="w-5.5 h-5.5 shrink-0 text-cyan-400" />
             ) : (
               <Menu size={22} className="w-5.5 h-5.5 shrink-0" />
             )}
           </button>
         </div>
 
-        {/* Framer Motion Animated Mobile Dropdown Menu */}
+        {/* Full-screen Slide-over Mobile Navigation Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="md:hidden border-b border-slate-800 bg-black/95 backdrop-blur-2xl px-4 py-5 space-y-4 overflow-hidden"
+              className="fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[100] bg-black/95 backdrop-blur-3xl border-t border-slate-800 px-5 py-6 flex flex-col justify-between overflow-y-auto w-full max-w-full"
             >
-              <div className="flex flex-col space-y-1">
+              <div className="flex flex-col space-y-1.5 w-full">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between min-h-[44px] px-3.5 py-2.5 rounded-xl text-slate-200 hover:bg-white/5 hover:text-cyan-400 text-sm font-medium transition"
+                    className="flex items-center justify-between min-h-[48px] px-4 py-3 rounded-xl text-slate-100 hover:bg-cyan-500/10 hover:text-cyan-400 text-base font-semibold transition border border-transparent hover:border-cyan-500/20 active:bg-cyan-500/15"
                   >
                     <span>{link.name}</span>
-                    <ChevronRight size={14} className="text-slate-500" />
+                    <ChevronRight size={16} className="text-cyan-400/70" />
                   </a>
                 ))}
               </div>
-              <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
+
+              <div className="pt-6 mt-6 border-t border-slate-800/80 flex flex-col gap-3 w-full shrink-0">
                 <a
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Akshaya_B_Resume.pdf"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-slate-900/60 border border-slate-800 text-white hover:border-cyan-400/50 transition active:scale-[0.98]"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl text-sm font-semibold bg-slate-900 border border-slate-700 text-white hover:border-cyan-400 transition active:scale-[0.98]"
                 >
                   <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                   <span>Download Resume</span>
@@ -384,9 +400,9 @@ export default function Home() {
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full min-h-[46px] flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition active:scale-[0.98]"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold bg-cyan-400 text-black hover:bg-cyan-300 transition active:scale-[0.98]"
                 >
-                  Get in Touch
+                  Let&apos;s Connect
                 </a>
               </div>
             </motion.div>
@@ -395,11 +411,11 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 py-12 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex items-center justify-center">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <section className="relative z-10 py-10 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex items-center justify-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 items-center">
           {/* Left Hero Content */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start"
@@ -408,15 +424,15 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(34,211,238,0.15)] max-w-full backdrop-blur-md"
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-5 shadow-[0_0_15px_rgba(34,211,238,0.15)] max-w-full backdrop-blur-md"
             >
               <Sparkles size={14} className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">AI • FRONTEND • CREATOR</span>
             </motion.div>
 
             {/* Main Name Heading */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.12] sm:leading-[1.08] text-white">
               Hi, I&apos;m{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500">
                 Akshaya B
@@ -434,18 +450,18 @@ export default function Home() {
               <span>Bangalore Urban, Karnataka, India</span>
             </p>
 
-            {/* Exact Resume Bio */}
+            {/* Positioning Paragraph strictly preserved */}
             <p className="mt-5 sm:mt-6 text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
-              CSE (AI &amp; ML) Student at PES University | Aspiring Front-End Developer with hands-on experience building full-stack web applications, AI-powered productivity tools, networking systems, and software projects. Experienced with React.js, JavaScript, Python, Node.js, FastAPI, databases, Git/GitHub, and cloud deployment.
+              CSE (AI &amp; ML) student at PES University, Bengaluru, exploring Artificial Intelligence, Machine Learning, and frontend development. I enjoy building intelligent applications and turning ideas into modern digital experiences.
             </p>
 
-            {/* Hero CTAs */}
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-5 w-full sm:w-auto">
+            {/* Hero Action CTAs */}
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
               <motion.a
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 href="#projects"
-                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] text-center"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition duration-300 shadow-[0_0_25px_rgba(34,211,238,0.35)] hover:shadow-[0_0_35px_rgba(34,211,238,0.5)] text-center cursor-pointer"
               >
                 <span>View Projects</span>
                 <ChevronRight size={16} className="w-4 h-4 shrink-0" />
@@ -458,21 +474,49 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Akshaya_B_Resume.pdf"
-                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-slate-900/60 hover:bg-slate-800/80 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-3.5 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 text-center"
+                className="inline-flex items-center justify-center min-h-[48px] gap-2.5 bg-slate-900/80 hover:bg-slate-800 text-white border border-slate-800 hover:border-cyan-400/50 px-7 py-3.5 rounded-2xl font-semibold text-sm sm:text-base backdrop-blur-md transition duration-300 text-center cursor-pointer"
               >
                 <Download size={16} className="w-4 h-4 shrink-0 text-cyan-400" />
                 <span>Download Resume</span>
               </motion.a>
             </div>
 
-            {/* Social Badges with Explicit 20px / w-5 h-5 Icons */}
-            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5 text-sm text-slate-400 w-full">
+            {/* Mobile-only Hero Image — appears between CTAs and Social Links */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-8 flex justify-center w-full lg:hidden"
+            >
+              <div className="relative group w-[80%] max-w-[280px]">
+                {/* Glowing Aura Background Ring */}
+                <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/30 via-blue-500/20 to-purple-600/25 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
+
+                {/* Glassmorphic Frame */}
+                <div className="relative rounded-3xl overflow-hidden border border-slate-800/90 group-hover:border-cyan-500/50 bg-slate-900/70 backdrop-blur-md p-2.5 shadow-2xl transition duration-500">
+                  <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-950">
+                    <Image
+                      src="/akshay.jpeg"
+                      alt="Akshaya B"
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 224px, 280px"
+                      className="object-cover object-center group-hover:scale-105 transition duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Social Badges */}
+            <div className="mt-6 sm:mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs sm:text-sm text-slate-300 w-full">
               <motion.a
                 whileHover={{ y: -2 }}
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-xl hover:bg-white/5 border border-transparent hover:border-slate-800"
               >
                 <GithubIcon size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>GitHub</span>
@@ -483,7 +527,7 @@ export default function Home() {
                 href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-xl hover:bg-white/5 border border-transparent hover:border-slate-800"
               >
                 <LinkedinIcon size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>LinkedIn</span>
@@ -492,7 +536,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ y: -2 }}
                 href={`mailto:${email}`}
-                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-lg hover:bg-white/5"
+                className="inline-flex items-center min-h-[44px] px-3 py-2 gap-2 hover:text-cyan-400 transition group rounded-xl hover:bg-white/5 border border-transparent hover:border-slate-800"
               >
                 <Mail size={20} className="w-5 h-5 shrink-0 text-slate-300 group-hover:text-cyan-400 transition" />
                 <span>Email</span>
@@ -500,26 +544,26 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Right Hero Image Card (No caption below) */}
+          {/* Right Hero Image Card — Desktop only */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center w-full"
+            className="hidden lg:flex lg:col-span-5 justify-center w-full"
           >
-            <div className="relative group w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px]">
-              {/* Glowing Aura Ring */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/25 via-blue-500/20 to-purple-600/25 rounded-3xl blur-xl sm:blur-2xl opacity-75 group-hover:opacity-100 transition duration-500" />
+            <div className="relative group w-full max-w-[340px]">
+              {/* Glowing Aura Background Ring */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/30 via-blue-500/20 to-purple-600/25 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition duration-500" />
 
-              {/* Glassmorphic Image Frame */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-800/80 group-hover:border-cyan-500/40 bg-slate-900/60 backdrop-blur-md p-2.5 sm:p-3 shadow-2xl transition duration-500">
+              {/* Glassmorphic Frame */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-800/90 group-hover:border-cyan-500/50 bg-slate-900/70 backdrop-blur-md p-3 shadow-2xl transition duration-500">
                 <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-950">
                   <Image
                     src="/akshay.jpeg"
                     alt="Akshaya B"
                     fill
                     priority
-                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 360px"
+                    sizes="340px"
                     className="object-cover object-center group-hover:scale-105 transition duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -533,7 +577,7 @@ export default function Home() {
       {/* About Section */}
       <motion.section
         id="about"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
@@ -561,56 +605,56 @@ export default function Home() {
             {/* Glassmorphic Pillars Grid */}
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3.5">
                   <Layers size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-base sm:text-lg">Front-End Focus</h3>
-                <p className="text-cyan-400 text-xs sm:text-sm mt-1">React &amp; Responsive UI</p>
+                <p className="text-cyan-400 text-xs sm:text-sm mt-1 font-medium">React &amp; Responsive UI</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Crafting clean, accessible, and high-performance component architectures.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-purple-500/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3.5">
                   <Cpu size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-base sm:text-lg">AI &amp; Multi-Agent</h3>
-                <p className="text-purple-400 text-xs sm:text-sm mt-1">LLMs &amp; Gemini AI</p>
+                <p className="text-purple-400 text-xs sm:text-sm mt-1 font-medium">LLMs &amp; Gemini AI</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Integrating intelligent workflows and multi-agent coordination systems.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3.5">
                   <ShieldCheck size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-base sm:text-lg">Systems &amp; Security</h3>
-                <p className="text-emerald-400 text-xs sm:text-sm mt-1">SSL/TLS &amp; Sockets</p>
+                <p className="text-emerald-400 text-xs sm:text-sm mt-1 font-medium">SSL/TLS &amp; Sockets</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Building concurrent client-server systems handling ~6,500 req/sec.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="p-5 sm:p-6 rounded-2xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-amber-500/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3.5">
                   <Network size={20} className="w-5 h-5 shrink-0" />
                 </div>
                 <h3 className="font-semibold text-white text-base sm:text-lg">Networking &amp; SDN</h3>
-                <p className="text-amber-400 text-xs sm:text-sm mt-1">Ryu &amp; OpenFlow</p>
+                <p className="text-amber-400 text-xs sm:text-sm mt-1 font-medium">Ryu &amp; OpenFlow</p>
                 <p className="text-slate-400 text-xs mt-2 leading-relaxed">
                   Implementing dynamic firewall filtering on simulated network topologies.
                 </p>
@@ -623,7 +667,7 @@ export default function Home() {
       {/* Experience Section */}
       <motion.section
         id="experience"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
@@ -702,7 +746,7 @@ export default function Home() {
       {/* Projects Section */}
       <motion.section
         id="projects"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
@@ -786,7 +830,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* GitHub Action Button */}
+                  {/* GitHub Action Link */}
                   <a
                     href={project.github}
                     target="_blank"
@@ -806,7 +850,7 @@ export default function Home() {
       {/* Skills Section */}
       <motion.section
         id="skills"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
@@ -822,7 +866,7 @@ export default function Home() {
               Skills &amp; Technologies
             </h2>
             <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
-              A categorized summary of programming languages, frameworks, systems, databases, and development tooling.
+              Categorized technical capabilities prioritized around Artificial Intelligence, Machine Learning, and Frontend engineering.
             </p>
           </div>
 
@@ -831,7 +875,7 @@ export default function Home() {
             {skillCategories.map((category) => (
               <motion.div
                 key={category.title}
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className={`p-5 sm:p-7 rounded-3xl backdrop-blur-md bg-slate-900/50 border ${category.borderColor} transition-all duration-300 flex flex-col justify-between shadow-lg`}
               >
                 <div>
@@ -842,7 +886,7 @@ export default function Home() {
                     <h3 className="text-base sm:text-lg font-bold text-white">{category.title}</h3>
                   </div>
 
-                  {/* Skill Badges / Pills */}
+                  {/* Skill Badges / Chips */}
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
                       <span
@@ -860,14 +904,68 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Education Section */}
+      {/* Certificates Section */}
       <motion.section
-        id="education"
-        initial={{ opacity: 0, y: 25 }}
+        id="certificates"
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
         className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <div className="inline-flex items-center gap-2 text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
+              <Award size={16} className="w-4 h-4 shrink-0" />
+              <span>Verified Knowledge</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              Certificates &amp; Training
+            </h2>
+            <p className="mt-3 sm:mt-4 text-slate-400 text-sm sm:text-base">
+              Recognized certifications and specialized training bootcamps.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {certificates.map((cert, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -4, scale: 1.01 }}
+                className="p-5 sm:p-7 rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300 flex flex-col justify-between shadow-lg"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3.5">
+                    <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full border ${cert.badgeColor}`}>
+                      {cert.badge}
+                    </span>
+                    <span className="text-xs font-mono text-slate-400">{cert.date}</span>
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 leading-snug">
+                    {cert.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-medium text-cyan-400 mb-2.5">
+                    {cert.issuer}
+                  </p>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {cert.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Education Section */}
+      <motion.section
+        id="education"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
@@ -887,7 +985,7 @@ export default function Home() {
             {education.map((edu, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -5, scale: 1.01 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 className="p-5 sm:p-7 rounded-3xl backdrop-blur-md bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/50 transition duration-300 flex flex-col justify-between shadow-lg"
               >
                 <div>
@@ -917,11 +1015,11 @@ export default function Home() {
       {/* Events & Hackathons Showcase */}
       <motion.section
         id="events"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
-        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-black/40 border-t border-slate-800/60 w-full"
+        className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/60 w-full"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
@@ -1077,7 +1175,7 @@ export default function Home() {
       {/* Contact Section */}
       <motion.section
         id="contact"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
@@ -1100,7 +1198,7 @@ export default function Home() {
           {/* Quick Contact Card */}
           <div className="p-5 sm:p-8 md:p-10 rounded-3xl backdrop-blur-xl bg-slate-900/50 border border-slate-800/80 max-w-2xl mx-auto w-full shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-black/60 border border-slate-800 mb-6 sm:mb-8 w-full">
-              <div className="flex items-center gap-3 text-left w-full sm:w-auto">
+              <div className="flex items-center gap-3 text-left w-full sm:w-auto min-w-0">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
                   <Mail size={20} className="w-5 h-5 shrink-0" />
                 </div>
@@ -1177,7 +1275,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="font-semibold text-white">Akshaya B</span>
             <span>•</span>
-            <span>AI • Frontend • Creator</span>
+            <span>AI/ML • Frontend • Creator</span>
           </div>
 
           <p>© {new Date().getFullYear()} Akshaya B. All rights reserved.</p>
@@ -1187,6 +1285,7 @@ export default function Home() {
             <a href="#experience" className="hover:text-cyan-400 transition py-1">Experience</a>
             <a href="#projects" className="hover:text-cyan-400 transition py-1">Projects</a>
             <a href="#skills" className="hover:text-cyan-400 transition py-1">Skills</a>
+            <a href="#certificates" className="hover:text-cyan-400 transition py-1">Certificates</a>
             <a href="#education" className="hover:text-cyan-400 transition py-1">Education</a>
             <a href="#contact" className="hover:text-cyan-400 transition py-1">Contact</a>
           </div>

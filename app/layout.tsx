@@ -19,23 +19,42 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Akshaya B | PES University | AI & Frontend Developer",
-  description: "Official portfolio of Akshaya B, CSE (AI & ML) student at PES University Bangalore. Full-stack developer specializing in React, Next.js, AI Agents, and Web Applications.",
+  metadataBase: new URL("https://v0-personal-portfolio-website-puce-iota.vercel.app"),
+  title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
+  description:
+    "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
   keywords: [
     "Akshaya B",
     "Akshaya B PES University",
     "Akshaya B PES",
     "Akshaya B portfolio",
-    "Akshay Shetty PES University",
-    "Akshaya B Bangalore"
+    "Akshaya B Bangalore",
+    "CSE AI ML PES University",
+    "Akshaya B AI ML Developer",
   ],
   authors: [{ name: "Akshaya B" }],
   openGraph: {
-    title: "Akshaya B | PES University Portfolio",
-    description: "CSE (AI & ML) student at PES University Bangalore.",
+    title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
+    description:
+      "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
     url: "https://v0-personal-portfolio-website-puce-iota.vercel.app",
     siteName: "Akshaya B Portfolio",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
+    description:
+      "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
+    images: ["/og-image.png"],
   },
   verification: {
     google: "Yz6Jl2NxPxbZiRBtDZLNVMZerzh6sIxOaKh4suLdces",
