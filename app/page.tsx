@@ -292,11 +292,11 @@ export default function Home() {
       </div>
 
       {/* Sticky Header Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-slate-800/80 transition-all duration-300 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-slate-800/80 transition-all duration-300 w-full box-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between w-full box-border">
           <Link
             href="#"
-            className="group flex items-center gap-2.5 text-base sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition"
+            className="group flex items-center gap-2.5 text-base sm:text-xl font-bold tracking-tight text-white hover:text-cyan-400 transition min-w-0 shrink"
           >
             <motion.div
               whileHover={{ rotate: 10, scale: 1.05 }}
@@ -304,7 +304,7 @@ export default function Home() {
             >
               A
             </motion.div>
-            <span className="truncate">
+            <span className="truncate min-w-0">
               Akshaya <span className="text-cyan-400">B</span>
             </span>
           </Link>
@@ -331,7 +331,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               download="Akshaya_B_Resume.pdf"
-              className="inline-flex items-center justify-center min-h-[44px] gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900/60 backdrop-blur-md border border-slate-800 hover:border-cyan-400/50 hover:bg-slate-800/60 transition duration-200"
+              className="inline-flex items-center justify-center min-h-[44px] gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900/60 backdrop-blur-md border border-slate-800 hover:border-cyan-400/50 hover:bg-slate-800/60 transition duration-200 shrink-0"
             >
               <Download size={14} className="w-3.5 h-3.5 shrink-0 text-cyan-400" />
               <span>Resume</span>
@@ -340,7 +340,7 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
               href="#contact"
-              className="inline-flex items-center justify-center min-h-[44px] gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-black bg-cyan-400 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-200"
+              className="inline-flex items-center justify-center min-h-[44px] gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-black bg-cyan-400 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition duration-200 shrink-0"
             >
               Let&apos;s Connect
             </motion.a>
@@ -351,12 +351,19 @@ export default function Home() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
-            className="flex lg:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 transition active:scale-95 cursor-pointer shrink-0"
+            className="flex lg:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900/80 border border-slate-800 text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 transition active:scale-95 cursor-pointer shrink-0 ml-auto mr-1 sm:mr-0 z-50 relative"
           >
             {mobileMenuOpen ? (
-              <X size={22} className="w-5.5 h-5.5 shrink-0 text-cyan-400" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0 text-cyan-400">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
             ) : (
-              <Menu size={22} className="w-5.5 h-5.5 shrink-0" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
             )}
           </button>
         </div>
