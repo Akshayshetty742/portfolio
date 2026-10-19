@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { profile } from "./portfolio-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,46 +16,40 @@ const geistMono = Geist_Mono({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  themeColor: "#090c0e",
 };
 
+const siteTitle =
+  "Akshaya B | CSE (AI & ML) at PES University | AI/ML & Frontend Developer";
+const siteDescription =
+  "Akshaya B is a Computer Science and Engineering (CSE) student specializing in Artificial Intelligence and Machine Learning at PES University, Bengaluru, with frontend development as an additional skill.";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://v0-personal-portfolio-website-puce-iota.vercel.app"),
-  title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
-  description:
-    "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
+  metadataBase: new URL(profile.productionUrl),
+  title: siteTitle,
+  description: siteDescription,
   keywords: [
     "Akshaya B",
-    "Akshaya B PES University",
-    "Akshaya B PES",
-    "Akshaya B portfolio",
-    "Akshaya B Bangalore",
-    "CSE AI ML PES University",
-    "Akshaya B AI ML Developer",
+    "Computer Science and Engineering AI and ML student",
+    "Artificial Intelligence and Machine Learning",
+    "frontend developer",
+    "PES University",
+    "Bengaluru",
   ],
   authors: [{ name: "Akshaya B" }],
+  alternates: {
+    canonical: profile.productionUrl,
+  },
   openGraph: {
-    title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
-    description:
-      "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
-    url: "https://v0-personal-portfolio-website-puce-iota.vercel.app",
+    title: siteTitle,
+    description: siteDescription,
+    url: profile.productionUrl,
     siteName: "Akshaya B Portfolio",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akshaya B | Aspiring AI/ML & Frontend Developer | PES University",
-    description:
-      "CSE (AI & ML) student at PES University, Bengaluru, aspiring AI/ML and frontend developer passionate about artificial intelligence, machine learning, frontend development, and building innovative digital experiences.",
-    images: ["/og-image.png"],
+    title: siteTitle,
+    description: siteDescription,
   },
   verification: {
     google: "Yz6Jl2NxPxbZiRBtDZLNVMZerzh6sIxOaKh4suLdces",
@@ -67,11 +62,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[#050505] text-slate-100 antialiased overflow-x-hidden w-full">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

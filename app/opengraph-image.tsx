@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Required by Next.js file convention — auto-populates og:image metadata
-export const alt = "Akshaya B – Aspiring AI/ML & Frontend Developer | PES University";
+export const alt =
+  "Akshaya B | CSE (AI & ML) student at PES University | AI/ML focus, frontend development";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,152 +14,112 @@ export default function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#050505",
+          justifyContent: "space-between",
+          padding: "62px 76px",
+          color: "#f0f3f2",
+          background:
+            "radial-gradient(ellipse at 78% 44%, rgba(20, 114, 118, .32), transparent 35%), #090c0e",
+          fontFamily: "Arial, sans-serif",
           position: "relative",
           overflow: "hidden",
-          fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
-        {/* Top-right cyan glow orb */}
         <div
           style={{
             position: "absolute",
-            top: -120,
-            right: -120,
-            width: 500,
-            height: 500,
+            right: -90,
+            top: -125,
+            width: 590,
+            height: 590,
+            border: "1px solid rgba(90, 218, 199, .2)",
             borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(34,211,238,0.18) 0%, rgba(34,211,238,0.05) 50%, transparent 70%)",
             display: "flex",
           }}
         />
-        {/* Bottom-left purple glow orb */}
         <div
           style={{
             position: "absolute",
-            bottom: -80,
-            left: -80,
-            width: 360,
-            height: 360,
+            right: -18,
+            top: -52,
+            width: 448,
+            height: 448,
+            border: "1px solid rgba(90, 218, 199, .13)",
             borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)",
             display: "flex",
           }}
         />
-
-        {/* Main content */}
         <div
           style={{
+            position: "absolute",
+            right: 102,
+            top: 147,
+            width: 182,
+            height: 182,
+            border: "1px solid rgba(90, 218, 199, .22)",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(75, 190, 170, .12), transparent 72%)",
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            flex: 1,
-            padding: "64px 80px",
           }}
-        >
-          {/* Monogram badge + pill tag row */}
+        />
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div
             style={{
+              width: 42,
+              height: 42,
+              borderRadius: 12,
+              border: "1px solid rgba(117, 231, 212, .42)",
+              color: "#78dfca",
               display: "flex",
               alignItems: "center",
-              marginBottom: 40,
-            }}
-          >
-            <div
-              style={{
-                width: 52,
-                height: 52,
-                borderRadius: 14,
-                background: "linear-gradient(135deg, #22d3ee, #3b82f6)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 26,
-                fontWeight: 900,
-                color: "#000",
-                marginRight: 16,
-                boxShadow: "0 0 24px rgba(34,211,238,0.4)",
-              }}
-            >
-              A
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "6px 16px",
-                borderRadius: 999,
-                border: "1px solid rgba(34,211,238,0.3)",
-                background: "rgba(34,211,238,0.08)",
-                color: "#22d3ee",
-                fontSize: 13,
-                fontWeight: 600,
-                letterSpacing: "0.12em",
-              }}
-            >
-              AI • FRONTEND • CREATOR
-            </div>
-          </div>
-
-          {/* Name */}
-          <div
-            style={{
-              fontSize: 80,
-              fontWeight: 900,
-              color: "#fff",
-              lineHeight: 1.05,
-              letterSpacing: "-2px",
-              marginBottom: 16,
-              display: "flex",
-            }}
-          >
-            Akshaya B
-          </div>
-
-          {/* Role — plain cyan, no background-clip (not supported in ImageResponse) */}
-          <div
-            style={{
-              fontSize: 34,
+              justifyContent: "center",
+              fontSize: 23,
               fontWeight: 700,
-              color: "#22d3ee",
-              marginBottom: 20,
-              display: "flex",
             }}
           >
-            AI/ML &amp; Frontend Developer
+            A.
           </div>
-
-          {/* Institution */}
+          <span style={{ color: "#c8d1ce", fontSize: 18, letterSpacing: ".04em" }}>
+            AKSHAYA B
+          </span>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <span
+            style={{
+              color: "#82dfcd",
+              fontSize: 17,
+              letterSpacing: ".2em",
+            }}
+          >
+            AI / ML FOCUS · FRONTEND DEVELOPMENT
+          </span>
           <div
             style={{
-              fontSize: 20,
-              color: "#94a3b8",
-              fontWeight: 500,
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
+              fontSize: 75,
+              lineHeight: 1.03,
+              letterSpacing: "-.06em",
+              fontWeight: 700,
+              maxWidth: 760,
             }}
           >
-            CSE (AI &amp; ML) Student  •  PES University, Bengaluru
+            <span>Thoughtful software.</span>
+            <span>Intelligent by design.</span>
           </div>
+          <span style={{ color: "#a7b1ae", fontSize: 20 }}>
+            CSE (AI &amp; ML) student · PES University · Bengaluru
+          </span>
         </div>
-
-        {/* Bottom accent line */}
         <div
           style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: 3,
-            background:
-              "linear-gradient(90deg, transparent, #22d3ee, #3b82f6, transparent)",
+            width: "100%",
+            height: 1,
+            background: "rgba(164, 190, 184, .24)",
             display: "flex",
           }}
         />
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }
